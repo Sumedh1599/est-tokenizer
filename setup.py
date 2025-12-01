@@ -20,7 +20,7 @@ if version_file.exists():
             break
 
 setup(
-    name="SanskritTokenizer",
+    name="est-tokenizer",
     version=version,
     author="Sumedh Patil",
     author_email="sumedh1599@gmail.com",

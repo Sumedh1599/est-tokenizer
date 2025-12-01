@@ -17,7 +17,7 @@
 ## 📦 **Installation**
 
 ```bash
-pip install SanskritTokenizer
+pip install est-tokenizer
 ```
 
 Or clone from source:
