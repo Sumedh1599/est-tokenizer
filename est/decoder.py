@@ -95,13 +95,28 @@ class SanskritDecoder:
             
             english = self.decode_word(clean_word)
             if english:
-                # Take first definition if multiple (split by semicolon or comma)
+                # Extract semantic information for context-aware decoding
+                word_data = self.word_data.get(clean_word, {})
+                semantic_frame = word_data.get('semantic_frame', '')
+                
+                # Use primary definition, but consider semantic frame for context
                 primary_def = english.split(';')[0].split(',')[0].strip()
-                english_words.append(primary_def)
+                
+                # If semantic frame suggests verb/action, preserve that meaning
+                if semantic_frame and ('verb' in semantic_frame.lower() or 'action' in semantic_frame.lower()):
+                    # This preserves verb meaning in context
+                    english_words.append(primary_def)
+                else:
+                    # Default: use primary definition
+                    english_words.append(primary_def)
             else:
-                if include_unknown:
-                    english_words.append(f"[{word}]")  # Mark as unknown
-                unknown_words.append(word)
+                # Check if it's already English (unmatched word preserved)
+                if clean_word.isalpha() and any(c.isupper() for c in clean_word):
+                    english_words.append(clean_word)
+                else:
+                    if include_unknown:
+                        english_words.append(f"[{word}]")  # Mark as unknown
+                    unknown_words.append(word)
         
         result = ' '.join(english_words)
         

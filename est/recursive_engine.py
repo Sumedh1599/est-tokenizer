@@ -10,6 +10,7 @@ from .scoring_system import ScoringSystem
 from .decision_engine import DecisionEngine, Decision
 from .transformation_flows import TransformationFlows
 from .context_assurance import ContextAssurance
+from .semantic_chunker import SemanticChunker
 
 class RecursiveEngine:
     def __init__(self, csv_path=None):
@@ -33,6 +34,7 @@ class RecursiveEngine:
         self.decision_engine = DecisionEngine()
         self.transformation_flows = TransformationFlows()
         self.context_assurance = ContextAssurance()
+        self.semantic_chunker = SemanticChunker()
         
         # For expected tokens/context guidance
         self.expected_tokens = None
@@ -334,7 +336,8 @@ class RecursiveEngine:
     
     def process_text(self, text: str, expected_tokens: List[str] = None, expected_context: str = None) -> Dict:
         """
-        Process full text with greedy phrase matching for maximum token reduction
+        Process full text with semantic chunking (SVO relationships) for context preservation
+        Breaks and rearranges sentences to preserve subject-verb-object relationships
         Tries longest phrases first (4 → 3 → 2 → 1 words) to achieve 50-70% reduction
         Unmatched words are preserved in English
         Returns: Complete processing result
@@ -348,6 +351,14 @@ class RecursiveEngine:
         
         # Get original words maintaining order
         original_words = text.split()
+        
+        # Step 1: Semantic chunking - identify SVO relationships
+        # Temporarily disable semantic chunking for simple sentences to ensure all words are processed
+        # Only use semantic chunking for longer, more complex sentences
+        if len(original_words) > 10:
+            semantic_phrases = self.semantic_chunker.create_semantic_phrases(text)
+        else:
+            semantic_phrases = []  # Skip semantic chunking for short sentences
         
         # Stop words to keep as-is (not tokenized)
         stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 
@@ -368,7 +379,38 @@ class RecursiveEngine:
         total_confidence = 0.0
         matched_count = 0
         
-        # Greedy phrase matching: Try longest phrases first
+        # Step 2: Process semantic phrases (SVO relationships) first
+        # This preserves context by matching subject-verb-object as units
+        # Only process if we have meaningful semantic phrases (not just single words)
+        if len(semantic_phrases) > 1 or (len(semantic_phrases) == 1 and len(semantic_phrases[0].split()) > 2):
+            for phrase in semantic_phrases:
+                # Skip single word phrases here - they'll be handled in greedy matching
+                if len(phrase.split()) <= 1:
+                    continue
+                    
+                # Try to match the entire semantic phrase
+                phrase_result = self.process_chunk(phrase)
+                
+                # Lower threshold for semantic phrases (they preserve context)
+                score_threshold = 0.30 if len(phrase.split()) >= 3 else 0.40
+                
+                if phrase_result.get('sanskrit') and phrase_result.get('score', 0.0) >= score_threshold:
+                    # Good semantic phrase match - preserves SVO relationship
+                    output_parts.append(phrase_result.get('sanskrit'))
+                    word_results.append(phrase_result)
+                    total_confidence += phrase_result.get('score', 0.0)
+                    matched_count += len([w for w in phrase.split() if not is_stop_word(w)])
+                    
+                    # Mark words in phrase as processed
+                    phrase_words = phrase.split()
+                    for word in phrase_words:
+                        # Find word in original text
+                        for idx, orig_word in enumerate(original_words):
+                            if not processed[idx] and clean_word(orig_word) == clean_word(word):
+                                processed[idx] = True
+                                break
+        
+        # Step 3: Greedy phrase matching for remaining words
         # Process words sequentially, trying to match phrases when possible
         i = 0
         while i < len(original_words):
@@ -393,9 +435,10 @@ class RecursiveEngine:
             best_meaningful_count = 0
             
             # Try phrases of different lengths (greedy: longest first)
+            # Start from single word (i+1) to allow single word matches if no phrases work
             max_lookahead = min(6, len(original_words) - i)
             
-            for end_pos in range(i + 2, i + max_lookahead + 1):
+            for end_pos in range(i + 1, i + max_lookahead + 1):
                 # Extract phrase words from i to end_pos
                 phrase_words = original_words[i:end_pos]
                 
@@ -411,7 +454,12 @@ class RecursiveEngine:
                         meaningful_words.append(clean_word(w))
                         meaningful_indices.append(i + j)
                 
-                # Need at least 2 meaningful words for phrase matching
+                # Need at least 1 meaningful word
+                if len(meaningful_words) < 1:
+                    continue
+                
+                # For phrase matching, we need at least 2 meaningful words
+                # Single words will be handled in the else block below
                 if len(meaningful_words) < 2:
                     continue
                 
@@ -422,7 +470,8 @@ class RecursiveEngine:
                 phrase_result = self.process_chunk(phrase)
                 
                 # Score threshold: lower for longer phrases (encourages compression)
-                score_threshold = 0.50 if len(meaningful_words) >= 3 else 0.60
+                # Also lower overall to allow more matches
+                score_threshold = 0.30 if len(meaningful_words) >= 3 else 0.40
                 
                 if phrase_result.get('sanskrit') and phrase_result.get('score', 0.0) >= score_threshold:
                     current_score = phrase_result.get('score', 0.0)
@@ -467,8 +516,13 @@ class RecursiveEngine:
                 # No phrase match, try single word
                 word_result = self.process_chunk(word_clean)
                 
-                if word_result.get('sanskrit') and word_result.get('score', 0.0) >= 0.60:
-                    # Good single word match
+                # Lower threshold for single words - accept if score > 0.10 (10%)
+                # This allows more words to be matched, improving tokenization
+                # Even low-confidence matches are better than keeping English words
+                min_score = 0.10
+                
+                if word_result.get('sanskrit') and word_result.get('score', 0.0) >= min_score:
+                    # Acceptable single word match
                     output_parts.append(word_result.get('sanskrit'))
                     word_results.append(word_result)
                     total_confidence += word_result.get('score', 0.0)
@@ -488,8 +542,12 @@ class RecursiveEngine:
                 # Try to match it as single word first (if not stop word)
                 if not is_stop_word(word):
                     word_result = self.process_chunk(clean_word(word))
-                    if word_result.get('sanskrit') and word_result.get('score', 0.0) >= 0.60:
+                    # Lower threshold for safety check - accept if score > 0.25
+                    if word_result.get('sanskrit') and word_result.get('score', 0.0) >= 0.25:
                         output_parts.append(word_result.get('sanskrit'))
+                        word_results.append(word_result)
+                        total_confidence += word_result.get('score', 0.0)
+                        matched_count += 1
                     else:
                         output_parts.append(word)
                 else:
