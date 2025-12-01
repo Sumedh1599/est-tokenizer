@@ -12,6 +12,7 @@ from pathlib import Path
 from .recursive_engine import RecursiveEngine
 from .semantic_expander import SemanticExpander
 from .context_detector import ContextDetector
+from .decoder import SanskritDecoder
 
 class SanskritTokenizer:
     """
@@ -257,4 +258,31 @@ class SanskritTokenizer:
             'decision': result['decision'],
             'reason': result['reason']
         }
+    
+    def decode(self, sanskrit_text: str, include_unknown: bool = True) -> str:
+        """
+        Decode Sanskrit tokens back to English.
+        
+        Args:
+            sanskrit_text: Sanskrit text to decode
+            include_unknown: If True, mark unknown words; if False, skip them
+        
+        Returns:
+            English translation
+        """
+        decoder = SanskritDecoder(csv_path=self.csv_path)
+        return decoder.decode(sanskrit_text, include_unknown)
+    
+    def decode_with_details(self, sanskrit_text: str) -> Dict:
+        """
+        Decode Sanskrit tokens with detailed information.
+        
+        Args:
+            sanskrit_text: Sanskrit text to decode
+        
+        Returns:
+            Dict with english translation, word details, and confidence
+        """
+        decoder = SanskritDecoder(csv_path=self.csv_path)
+        return decoder.decode_with_details(sanskrit_text)
 

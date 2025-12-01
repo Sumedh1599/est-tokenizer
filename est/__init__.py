@@ -10,6 +10,7 @@ __author__ = "Sumedh Patil"
 __email__ = "sumedh1599@gmail.com"
 
 from .tokenizer import SanskritTokenizer
+from .decoder import SanskritDecoder
 
-__all__ = ['SanskritTokenizer']
+__all__ = ['SanskritTokenizer', 'SanskritDecoder']
 

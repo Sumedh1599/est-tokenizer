@@ -31,16 +31,21 @@ pip install -r requirements.txt
 ## 🔧 **Quick Start**
 
 ```python
-from est import SanskritTokenizer
+from est import SanskritTokenizer, SanskritDecoder
 
 # Initialize tokenizer
 tokenizer = SanskritTokenizer()
 
-# Basic tokenization
+# Basic tokenization (English → Sanskrit)
 english_text = "divide property inheritance fairly"
 sanskrit_tokens = tokenizer.tokenize(english_text)
 print(f"Input: {english_text}")
 print(f"Tokens: {sanskrit_tokens}")
+
+# Decode back to English (Sanskrit → English)
+decoder = SanskritDecoder()
+english_back = decoder.decode(sanskrit_tokens)
+print(f"Decoded: {english_back}")
 
 # With confidence scores
 result = tokenizer.tokenize_with_confidence(english_text)
@@ -120,6 +125,42 @@ print(f"Confidence: {context['confidence']:.1f}%")
 ```python
 texts = ["divide property", "share resources", "calculate fractions"]
 results = tokenizer.batch_tokenize(texts)
+```
+
+### **5. Decode Sanskrit to English**
+
+```python
+from est import SanskritDecoder
+
+decoder = SanskritDecoder()
+
+# Simple decode
+sanskrit = "saMpraBinna"
+english = decoder.decode(sanskrit)
+print(f"Sanskrit: {sanskrit}")
+print(f"English: {english}")
+
+# Detailed decode
+details = decoder.decode_with_details(sanskrit)
+print(f"Translation: {details['english']}")
+print(f"Confidence: {details['confidence']:.1f}%")
+print(f"Word details: {details['words']}")
+```
+
+### **6. Full Encode-Decode Cycle**
+
+```python
+tokenizer = SanskritTokenizer()
+decoder = SanskritDecoder()
+
+# Encode
+english = "divide property"
+sanskrit = tokenizer.tokenize(english)
+print(f"English → Sanskrit: {sanskrit}")
+
+# Decode
+english_back = decoder.decode(sanskrit)
+print(f"Sanskrit → English: {english_back}")
 ```
 
 ## 🔍 **Advanced Usage**
@@ -206,6 +247,8 @@ Add new Sanskrit words to `data/check_dictionary.csv` with all 7 semantic column
 
 ### **SanskritTokenizer Class**
 
+Main class for English → Sanskrit tokenization.
+
 ```python
 class SanskritTokenizer:
     def __init__(self, min_confidence=0.80):
@@ -251,6 +294,70 @@ class SanskritTokenizer:
         
         Returns:
             Dict with full processing details
+        """
+    
+    def decode(self, sanskrit_text, include_unknown=True):
+        """
+        Decode Sanskrit tokens back to English.
+        
+        Args:
+            sanskrit_text: Sanskrit text to decode
+            include_unknown: If True, mark unknown words; if False, skip them
+        
+        Returns:
+            English translation string
+        """
+    
+    def decode_with_details(self, sanskrit_text):
+        """
+        Decode Sanskrit tokens with detailed information.
+        
+        Returns:
+            Dict with english, words, unknown_words, confidence
+        """
+```
+
+### **SanskritDecoder Class**
+
+Standalone decoder for Sanskrit → English translation.
+
+```python
+class SanskritDecoder:
+    def __init__(self, csv_path=None):
+        """
+        Initialize decoder with Sanskrit dictionary.
+        """
+    
+    def decode(self, sanskrit_text, include_unknown=True):
+        """
+        Decode Sanskrit text to English.
+        
+        Returns:
+            English translation string
+        """
+    
+    def decode_with_details(self, sanskrit_text):
+        """
+        Decode with word-by-word details.
+        
+        Returns:
+            Dict with full translation details
+        """
+    
+    def decode_word(self, sanskrit_word):
+        """
+        Decode a single Sanskrit word.
+        
+        Returns:
+            English definition or None
+        """
+    
+    def get_word_info(self, sanskrit_word):
+        """
+        Get full information about a Sanskrit word.
+        
+        Returns:
+            Dict with all word data or None
         """
 ```
 
