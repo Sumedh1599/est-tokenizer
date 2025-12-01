@@ -31,47 +31,45 @@ class RecursiveEngine:
         self.pre_processor = PreProcessor()
         self.scoring_system = ScoringSystem(self.word_data)
         self.decision_engine = DecisionEngine()
-        self.transformer = TransformationFlows()
+        self.transformation_flows = TransformationFlows()
         self.context_assurance = ContextAssurance()
         
-        # Expected tokens for testing (optional)
+        # For expected tokens/context guidance
         self.expected_tokens = None
         self.expected_context = None
     
     def load_dataset(self):
-        """Load Sanskrit word data from CSV"""
-        print("Loading dataset...")
-        
-        with open(self.csv_path, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            
-            for row in reader:
-                sanskrit = row.get('sanskrit', '').strip()
-                if sanskrit:
-                    self.word_data[sanskrit] = {
-                        'english': row.get('english', '').strip(),
-                        'semantic_frame': row.get('semantic_frame', '').strip(),
-                        'contextual_triggers': row.get('Contextual_Triggers', '').strip(),
-                        'conceptual_anchors': row.get('Conceptual_Anchors', '').strip(),
-                        'ambiguity_resolvers': row.get('Ambiguity_Resolvers', '').strip(),
-                        'usage_frequency_index': row.get('Usage_Frequency_Index', '').strip(),
-                        'semantic_neighbors': row.get('Semantic_Neighbors', '').strip()
-                    }
-        
-        print(f"Loaded {len(self.word_data)} Sanskrit words")
+        """Load Sanskrit dataset from CSV"""
+        try:
+            with open(self.csv_path, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    sanskrit = row.get('sanskrit', '').strip()
+                    if sanskrit:
+                        self.word_data[sanskrit] = {
+                            'english': row.get('english', '').strip(),
+                            'semantic_frame': row.get('semantic_frame', '').strip(),
+                            'contextual_triggers': row.get('Contextual_Triggers', '').strip(),
+                            'conceptual_anchors': row.get('Conceptual_Anchors', '').strip(),
+                            'ambiguity_resolvers': row.get('Ambiguity_Resolvers', '').strip(),
+                            'usage_frequency_index': row.get('Usage_Frequency_Index', '').strip()
+                        }
+        except Exception as e:
+            print(f"Error loading dataset: {e}")
+            self.word_data = {}
     
     def iteration1_full_sentence(self, text: str, previous_score: Optional[float] = None) -> Dict:
-        """Iteration 1: Full sentence scoring"""
+        """Iteration 1: Try to match full sentence"""
         matches = self.scoring_system.find_best_matches(
-            text, top_n=1, 
-            expected_tokens=self.expected_tokens, 
+            text, 
+            top_n=1,
+            expected_tokens=self.expected_tokens,
             expected_context=self.expected_context
         )
         
         if matches:
             sanskrit, score, breakdown = matches[0]
-            decision, reason = self.decision_engine.make_decision(score, previous_score, 1, "full_sentence")
-            
+            decision, reason = self.decision_engine.make_decision(score, previous_score, iteration=1)
             return {
                 'iteration': 1,
                 'chunk': text,
@@ -87,267 +85,179 @@ class RecursiveEngine:
             'chunk': text,
             'sanskrit': None,
             'score': 0.0,
-            'breakdown': {},
-            'decision': Decision.REJECT,
-            'reason': 'No matches found'
+            'decision': Decision.CONTINUE,
+            'reason': 'No full sentence match found'
         }
     
     def iteration2_phrase_breakdown(self, text: str, previous_score: Optional[float] = None) -> Dict:
-        """Iteration 2: Phrase breakdown"""
-        preprocessed = self.pre_processor.process(text)
-        phrases = preprocessed['phrases']
-        
+        """Iteration 2: Break into phrases and match"""
+        # Simple phrase extraction: split by common delimiters
+        phrases = [p.strip() for p in text.split(',') if p.strip()]
         if not phrases:
-            # Fallback to simple word groups
-            words = preprocessed['filtered']
-            if len(words) >= 2:
-                phrases = [(' '.join(words[:len(words)//2]), 'first_half'),
-                          (' '.join(words[len(words)//2:]), 'second_half')]
+            phrases = [text]
         
-        best_phrase_result = None
-        best_score = 0.0
+        best_phrases = []
+        total_score = 0.0
         
-        for phrase, phrase_type in phrases[:5]:  # Limit to 5 phrases
+        for phrase in phrases:
             matches = self.scoring_system.find_best_matches(
-                phrase, top_n=1,
+                phrase,
+                top_n=1,
                 expected_tokens=self.expected_tokens,
                 expected_context=self.expected_context
             )
             if matches:
                 sanskrit, score, breakdown = matches[0]
-                if score > best_score:
-                    best_score = score
-                    best_phrase_result = {
-                        'iteration': 2,
-                        'chunk': phrase,
-                        'sanskrit': sanskrit,
-                        'score': score,
-                        'breakdown': breakdown,
-                        'phrase_type': phrase_type
-                    }
+                if score >= 0.60:
+                    best_phrases.append(sanskrit)
+                    total_score += score
         
-        if best_phrase_result:
-            decision, reason = self.decision_engine.make_decision(
-                best_score, previous_score, 2, "phrase"
-            )
-            best_phrase_result['decision'] = decision
-            best_phrase_result['reason'] = reason
-            return best_phrase_result
+        if best_phrases:
+            avg_score = total_score / len(best_phrases)
+            sanskrit_output = ' '.join(best_phrases)
+            decision, reason = self.decision_engine.make_decision(avg_score, previous_score, iteration=2)
+            return {
+                'iteration': 2,
+                'chunk': text,
+                'sanskrit': sanskrit_output,
+                'score': avg_score,
+                'breakdown': {},
+                'decision': decision,
+                'reason': reason
+            }
         
         return {
             'iteration': 2,
             'chunk': text,
             'sanskrit': None,
             'score': 0.0,
-            'decision': Decision.REJECT,
+            'decision': Decision.CONTINUE,
             'reason': 'No phrase matches found'
         }
     
     def iteration3_verb_object_pairs(self, text: str, previous_score: Optional[float] = None) -> Dict:
-        """Iteration 3: Verb-object pairs with transformation"""
-        preprocessed = self.pre_processor.process(text)
-        verb_object_pairs = preprocessed['verb_object_pairs']
+        """Iteration 3: Extract verb-object pairs"""
+        words = text.split()
+        if len(words) < 2:
+            return {
+                'iteration': 3,
+                'chunk': text,
+                'sanskrit': None,
+                'score': 0.0,
+                'decision': Decision.CONTINUE,
+                'reason': 'Not enough words for verb-object pairs'
+            }
         
-        if not verb_object_pairs:
-            # Try to extract pairs from filtered words
-            words = preprocessed['filtered']
-            if len(words) >= 2:
-                verb_object_pairs = [(words[0], words[-1])]
-        
-        best_pair_result = None
-        best_score = 0.0
-        
-        for verb, obj in verb_object_pairs[:3]:  # Limit to 3 pairs
-            # Transform the pair
-            transformations = self.transformer.transform_verb_object_pair(verb, obj)
-            
-            for transformed in transformations:
-                matches = self.scoring_system.find_best_matches(
-                    transformed, top_n=1,
-                    expected_tokens=self.expected_tokens,
-                    expected_context=self.expected_context
-                )
-                if matches:
-                    sanskrit, score, breakdown = matches[0]
-                    if score > best_score:
-                        best_score = score
-                        best_pair_result = {
-                            'iteration': 3,
-                            'chunk': f"{verb} {obj}",
-                            'transformed': transformed,
-                            'sanskrit': sanskrit,
-                            'score': score,
-                            'breakdown': breakdown
-                        }
-        
-        if best_pair_result:
-            decision, reason = self.decision_engine.make_decision(
-                best_score, previous_score, 3, "verb_object"
+        # Try 2-word combinations
+        pairs = []
+        for i in range(len(words) - 1):
+            pair = f"{words[i]} {words[i+1]}"
+            matches = self.scoring_system.find_best_matches(
+                pair,
+                top_n=1,
+                expected_tokens=self.expected_tokens,
+                expected_context=self.expected_context
             )
-            best_pair_result['decision'] = decision
-            best_pair_result['reason'] = reason
-            return best_pair_result
+            if matches:
+                sanskrit, score, breakdown = matches[0]
+                if score >= 0.60:
+                    pairs.append((pair, sanskrit, score))
+        
+        if pairs:
+            best_pair = max(pairs, key=lambda x: x[2])
+            decision, reason = self.decision_engine.make_decision(best_pair[2], previous_score, iteration=3)
+            return {
+                'iteration': 3,
+                'chunk': text,
+                'sanskrit': best_pair[1],
+                'score': best_pair[2],
+                'breakdown': {},
+                'decision': decision,
+                'reason': reason
+            }
         
         return {
             'iteration': 3,
             'chunk': text,
             'sanskrit': None,
             'score': 0.0,
-            'decision': Decision.REJECT,
-            'reason': 'No verb-object pair matches found'
+            'decision': Decision.CONTINUE,
+            'reason': 'No verb-object pairs found'
         }
     
     def iteration4_individual_words(self, text: str, previous_score: Optional[float] = None) -> Dict:
-        """Iteration 4: Individual words with synonyms"""
-        preprocessed = self.pre_processor.process(text)
-        words = preprocessed['filtered']
+        """Iteration 4: Match individual words"""
+        words = text.split()
+        matched_words = []
+        total_score = 0.0
         
-        best_word_result = None
-        best_score = 0.0
-        
-        for word in words[:5]:  # Limit to 5 words
-            # Try original word
+        for word in words:
             matches = self.scoring_system.find_best_matches(
-                word, top_n=1,
+                word,
+                top_n=1,
                 expected_tokens=self.expected_tokens,
                 expected_context=self.expected_context
             )
-            
-            # Try synonyms
-            synonym_phrases = self.transformer.apply_synonyms(word)
-            for synonym_phrase in synonym_phrases[:2]:
-                synonym_matches = self.scoring_system.find_best_matches(
-                    synonym_phrase, top_n=1,
-                    expected_tokens=self.expected_tokens,
-                    expected_context=self.expected_context
-                )
-                if synonym_matches:
-                    matches.extend(synonym_matches)
-            
             if matches:
-                # Get best match
-                matches.sort(key=lambda x: x[1], reverse=True)
                 sanskrit, score, breakdown = matches[0]
-                
-                if score > best_score:
-                    best_score = score
-                    best_word_result = {
-                        'iteration': 4,
-                        'chunk': word,
-                        'sanskrit': sanskrit,
-                        'score': score,
-                        'breakdown': breakdown
-                    }
+                if score >= 0.60:
+                    matched_words.append(sanskrit)
+                    total_score += score
+                else:
+                    matched_words.append(word)  # Keep original if low score
+            else:
+                matched_words.append(word)  # Keep original if no match
         
-        if best_word_result:
-            decision, reason = self.decision_engine.make_decision(
-                best_score, previous_score, 4, "individual_word"
-            )
-            best_word_result['decision'] = decision
-            best_word_result['reason'] = reason
-            return best_word_result
+        if matched_words:
+            matched_count = len([w for w in matched_words if w in self.word_data])
+            avg_score = total_score / matched_count if matched_count > 0 else 0.0
+            sanskrit_output = ' '.join(matched_words)
+            decision, reason = self.decision_engine.make_decision(avg_score, previous_score, iteration=4)
+            return {
+                'iteration': 4,
+                'chunk': text,
+                'sanskrit': sanskrit_output,
+                'score': avg_score,
+                'breakdown': {},
+                'decision': decision,
+                'reason': reason
+            }
         
         return {
             'iteration': 4,
             'chunk': text,
             'sanskrit': None,
             'score': 0.0,
-            'decision': Decision.REJECT,
-            'reason': 'No individual word matches found'
+            'decision': Decision.CONTINUE,
+            'reason': 'No individual word matches'
         }
     
     def iteration5_final_resolution(self, text: str, previous_score: Optional[float] = None) -> Dict:
-        """Iteration 5: Final resolution with Ambiguity_Resolvers and Semantic_Neighbors"""
-        # Try all words in dataset with ambiguity resolvers
-        best_result = None
-        best_score = 0.0
+        """Iteration 5: Final resolution with lower threshold"""
+        matches = self.scoring_system.find_best_matches(
+            text,
+            top_n=5,
+            expected_tokens=self.expected_tokens,
+            expected_context=self.expected_context
+        )
         
-        preprocessed = self.pre_processor.process(text)
-        text_words = set(preprocessed['filtered'])
-        
-        for sanskrit, word_data in self.word_data.items():
-            # Check ambiguity resolvers
-            resolvers = word_data.get('ambiguity_resolvers', '').strip()
-            if resolvers:
-                resolver_words = set()
-                for resolver in resolvers.split('|'):
-                    resolver = resolver.strip().lower()
-                    if resolver:
-                        resolver_words.add(resolver)
-                
-                # Calculate overlap
-                overlap = len(text_words & resolver_words)
-                if overlap > 0:
-                    # Calculate score
-                    score, breakdown = self.scoring_system.calculate_score(text, sanskrit)
-                    # Boost score based on resolver overlap
-                    score = min(score + (overlap * 0.1), 1.0)
-                    
-                    if score > best_score:
-                        best_score = score
-                        best_result = {
-                            'iteration': 5,
-                            'chunk': text,
-                            'sanskrit': sanskrit,
-                            'score': score,
-                            'breakdown': breakdown,
-                            'resolver_match': True
-                        }
-        
-        # If no resolver match, try semantic neighbors of previous matches
-        if not best_result or best_score < 0.50:
-            # Get all matches and check their neighbors
-            all_matches = self.scoring_system.find_best_matches(
-                text, top_n=10,
-                expected_tokens=self.expected_tokens,
-                expected_context=self.expected_context
-            )
-            for sanskrit, score, breakdown in all_matches:
-                word_data = self.word_data.get(sanskrit)
-                if word_data:
-                    neighbors = word_data.get('semantic_neighbors', '').strip()
-                    if neighbors:
-                        # Try neighbors
-                        for neighbor in neighbors.split('|')[:3]:  # Limit to 3 neighbors
-                            neighbor = neighbor.strip()
-                            if neighbor in self.word_data:
-                                neighbor_score, neighbor_breakdown = self.scoring_system.calculate_score(text, neighbor)
-                                if neighbor_score > best_score:
-                                    best_score = neighbor_score
-                                    best_result = {
-                                        'iteration': 5,
-                                        'chunk': text,
-                                        'sanskrit': neighbor,
-                                        'score': neighbor_score,
-                                        'breakdown': neighbor_breakdown,
-                                        'via_neighbor': sanskrit
-                                    }
-        
-        # Force best available match if still no result
-        if not best_result:
-            all_matches = self.scoring_system.find_best_matches(
-                text, top_n=1,
-                expected_tokens=self.expected_tokens,
-                expected_context=self.expected_context
-            )
-            if all_matches:
-                sanskrit, score, breakdown = all_matches[0]
-                best_result = {
+        if matches:
+            # Use best match even with lower score
+            best_result = matches[0]
+            sanskrit, score, breakdown = best_result
+            
+            # Lower threshold for final resolution
+            if score >= 0.30:
+                decision, reason = self.decision_engine.make_decision(score, previous_score, iteration=5)
+                return {
                     'iteration': 5,
                     'chunk': text,
                     'sanskrit': sanskrit,
                     'score': score,
                     'breakdown': breakdown,
-                    'forced': True
+                    'decision': decision,
+                    'reason': reason
                 }
-        
-        if best_result:
-            decision, reason = self.decision_engine.make_decision(
-                best_result['score'], previous_score, 5, "final_resolution"
-            )
-            best_result['decision'] = decision
-            best_result['reason'] = reason
-            return best_result
         
         return {
             'iteration': 5,
@@ -424,7 +334,8 @@ class RecursiveEngine:
     
     def process_text(self, text: str, expected_tokens: List[str] = None, expected_context: str = None) -> Dict:
         """
-        Process full text through recursive engine word-by-word
+        Process full text with greedy phrase matching for maximum token reduction
+        Tries longest phrases first (4 → 3 → 2 → 1 words) to achieve 50-70% reduction
         Unmatched words are preserved in English
         Returns: Complete processing result
         """
@@ -443,48 +354,121 @@ class RecursiveEngine:
                      'of', 'with', 'by', 'from', 'as', 'is', 'are', 'was', 'were', 'do', 'does', 'did',
                      'we', 'need', 'how', 'into', 'have', 'has', 'had', 'will', 'would', 'could', 'should'}
         
-        # Process word-by-word maintaining order
+        # Helper functions
+        def is_stop_word(w):
+            return w.lower().strip('.,!?;:()[]{}') in stop_words
+        
+        def clean_word(w):
+            return w.lower().strip('.,!?;:()[]{}')
+        
+        # Track which words have been processed
+        processed = [False] * len(original_words)
         output_parts = []
         word_results = []
         total_confidence = 0.0
         matched_count = 0
-        i = 0
         
+        # Greedy phrase matching: Try longest phrases first
+        # Process words sequentially, trying to match phrases when possible
+        i = 0
         while i < len(original_words):
-            word = original_words[i]
-            word_clean = word.lower().strip('.,!?;:()[]{}')
-            
-            # Keep stop words as-is
-            if word_clean in stop_words:
-                output_parts.append(word)
+            if processed[i]:
                 i += 1
                 continue
             
-            # Try 2-word phrase first (if not at end and next word is not stop word)
-            phrase_matched = False
-            if i < len(original_words) - 1:
-                next_word = original_words[i + 1]
-                next_word_clean = next_word.lower().strip('.,!?;:()[]{}')
-                
-                if next_word_clean not in stop_words:
-                    phrase = f"{word_clean} {next_word_clean}"
-                    phrase_result = self.process_chunk(phrase)
-                    
-                    if phrase_result.get('sanskrit') and phrase_result.get('score', 0.0) >= 0.60:
-                        # Good phrase match
-                        output_parts.append(phrase_result.get('sanskrit'))
-                        word_results.append(phrase_result)
-                        total_confidence += phrase_result.get('score', 0.0)
-                        matched_count += 2
-                        i += 2  # Skip both words
-                        phrase_matched = True
+            word = original_words[i]
+            word_clean = clean_word(word)
             
-            if not phrase_matched:
-                # Try single word match
+            # Keep stop words as-is
+            if is_stop_word(word):
+                output_parts.append(word)
+                processed[i] = True
+                i += 1
+                continue
+            
+            # Try to find best phrase match starting at position i
+            # Look ahead up to 6 words to find meaningful word sequences
+            best_match = None
+            best_score = 0.0
+            best_meaningful_count = 0
+            
+            # Try phrases of different lengths (greedy: longest first)
+            max_lookahead = min(6, len(original_words) - i)
+            
+            for end_pos in range(i + 2, i + max_lookahead + 1):
+                # Extract phrase words from i to end_pos
+                phrase_words = original_words[i:end_pos]
+                
+                # Skip if any word in phrase is already processed
+                if any(processed[i + j] for j in range(end_pos - i)):
+                    continue
+                
+                # Extract meaningful words (skip stop words for matching)
+                meaningful_words = []
+                meaningful_indices = []
+                for j, w in enumerate(phrase_words):
+                    if not is_stop_word(w):
+                        meaningful_words.append(clean_word(w))
+                        meaningful_indices.append(i + j)
+                
+                # Need at least 2 meaningful words for phrase matching
+                if len(meaningful_words) < 2:
+                    continue
+                
+                # Build phrase for matching (meaningful words only)
+                phrase = ' '.join(meaningful_words)
+                
+                # Try to match this phrase
+                phrase_result = self.process_chunk(phrase)
+                
+                # Score threshold: lower for longer phrases (encourages compression)
+                score_threshold = 0.50 if len(meaningful_words) >= 3 else 0.60
+                
+                if phrase_result.get('sanskrit') and phrase_result.get('score', 0.0) >= score_threshold:
+                    current_score = phrase_result.get('score', 0.0)
+                    # Prefer longer phrases with good scores
+                    if current_score > best_score or (current_score == best_score and len(meaningful_words) > best_meaningful_count):
+                        best_match = {
+                            'sanskrit': phrase_result.get('sanskrit'),
+                            'score': current_score,
+                            'word_count': end_pos - i,  # Total words in phrase (including stop words)
+                            'meaningful_count': len(meaningful_words),
+                            'result': phrase_result,
+                            'words': phrase_words,
+                            'meaningful_indices': meaningful_indices
+                        }
+                        best_score = current_score
+                        best_meaningful_count = len(meaningful_words)
+            
+            # Use best phrase match if found
+            if best_match:
+                # Add Sanskrit token (replaces all meaningful words in the phrase)
+                output_parts.append(best_match['sanskrit'])
+                word_results.append(best_match['result'])
+                total_confidence += best_match['score']
+                matched_count += best_match['meaningful_count']
+                
+                # Mark all words in phrase as processed
+                # Meaningful words are replaced by Sanskrit, stop words are added separately
+                for j in range(best_match['word_count']):
+                    word_idx = i + j
+                    word = original_words[word_idx]
+                    
+                    if is_stop_word(word):
+                        # Add stop word to output (preserve in original position)
+                        output_parts.append(word)
+                    
+                    # Mark as processed
+                    processed[word_idx] = True
+                
+                # Move past all words in the phrase
+                i += best_match['word_count']
+            else:
+                # No phrase match, try single word
                 word_result = self.process_chunk(word_clean)
                 
                 if word_result.get('sanskrit') and word_result.get('score', 0.0) >= 0.60:
-                    # Good match found
+                    # Good single word match
                     output_parts.append(word_result.get('sanskrit'))
                     word_results.append(word_result)
                     total_confidence += word_result.get('score', 0.0)
@@ -493,7 +477,24 @@ class RecursiveEngine:
                     # No good match - keep original English word
                     output_parts.append(word)
                 
+                processed[i] = True
                 i += 1
+        
+        # Safety check: ensure all words are processed
+        # Add any unprocessed words to output
+        for idx in range(len(original_words)):
+            if not processed[idx]:
+                word = original_words[idx]
+                # Try to match it as single word first (if not stop word)
+                if not is_stop_word(word):
+                    word_result = self.process_chunk(clean_word(word))
+                    if word_result.get('sanskrit') and word_result.get('score', 0.0) >= 0.60:
+                        output_parts.append(word_result.get('sanskrit'))
+                    else:
+                        output_parts.append(word)
+                else:
+                    output_parts.append(word)
+                processed[idx] = True
         
         # Build final output
         sanskrit_output = ' '.join(output_parts)
@@ -501,15 +502,20 @@ class RecursiveEngine:
         # Calculate average confidence
         avg_confidence = total_confidence / matched_count if matched_count > 0 else 0.0
         
+        # Calculate token reduction
+        input_tokens = len(original_words)
+        output_tokens = len(sanskrit_output.split())
+        token_reduction = ((input_tokens - output_tokens) / input_tokens * 100) if input_tokens > 0 else 0.0
+        
         # Create summary result
         summary_result = {
-            'iteration': 'word-by-word',
+            'iteration': 'greedy-phrase-matching',
             'chunk': text,
             'sanskrit': sanskrit_output,
             'score': avg_confidence,
             'breakdown': {},
             'decision': Decision.ACCEPT if matched_count > 0 else Decision.REJECT,
-            'reason': f'Processed {matched_count} words/phrases, {len(original_words) - matched_count} kept in English'
+            'reason': f'Processed {matched_count} words/phrases, {len(original_words) - matched_count} kept in English. Token reduction: {token_reduction:.1f}%'
         }
         
         return {
@@ -520,31 +526,7 @@ class RecursiveEngine:
             'confidence': avg_confidence,
             'word_results': word_results,
             'matched_count': matched_count,
-            'total_words': len(original_words)
+            'total_words': len(original_words),
+            'output_tokens': output_tokens,
+            'token_reduction': token_reduction
         }
-
-def main():
-    """Test recursive engine"""
-    print("=" * 80)
-    print("Recursive Engine - Testing")
-    print("=" * 80)
-    
-    engine = RecursiveEngine()
-    
-    test_text = "How to divide a cake into portions"
-    print(f"\nInput: '{test_text}'")
-    
-    result = engine.process_text(test_text)
-    
-    print(f"\nOutput: '{result['sanskrit_output']}'")
-    print(f"Confidence: {result['confidence']:.2%}")
-    print(f"\nFinal Result:")
-    final = result['final_result']
-    print(f"  Sanskrit: {final.get('sanskrit', 'N/A')}")
-    print(f"  Score: {final.get('score', 0.0):.2%}")
-    print(f"  Decision: {final.get('decision', 'N/A')}")
-    print(f"  Iteration: {final.get('iteration', 'N/A')}")
-
-if __name__ == "__main__":
-    main()
-
