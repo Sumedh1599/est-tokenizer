@@ -424,7 +424,8 @@ class RecursiveEngine:
     
     def process_text(self, text: str, expected_tokens: List[str] = None, expected_context: str = None) -> Dict:
         """
-        Process full text through recursive engine
+        Process full text through recursive engine word-by-word
+        Unmatched words are preserved in English
         Returns: Complete processing result
         """
         # Store expected tokens for use in scoring
@@ -434,36 +435,92 @@ class RecursiveEngine:
         # Pre-process
         preprocessed = self.pre_processor.process(text)
         
-        # Process main chunk
-        main_result = self.process_chunk(text)
+        # Get original words maintaining order
+        original_words = text.split()
         
-        # If not accepted, try processing phrases separately
-        if main_result['decision'] != Decision.ACCEPT or main_result['score'] < 0.60:
-            # Try phrase-by-phrase processing
-            phrases = preprocessed['phrases']
-            if phrases:
-                phrase_results = []
-                for phrase, _ in phrases[:3]:  # Limit to 3 phrases
-                    phrase_result = self.process_chunk(phrase)
-                    phrase_results.append(phrase_result)
+        # Stop words to keep as-is (not tokenized)
+        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 
+                     'of', 'with', 'by', 'from', 'as', 'is', 'are', 'was', 'were', 'do', 'does', 'did',
+                     'we', 'need', 'how', 'into', 'have', 'has', 'had', 'will', 'would', 'could', 'should'}
+        
+        # Process word-by-word maintaining order
+        output_parts = []
+        word_results = []
+        total_confidence = 0.0
+        matched_count = 0
+        i = 0
+        
+        while i < len(original_words):
+            word = original_words[i]
+            word_clean = word.lower().strip('.,!?;:()[]{}')
+            
+            # Keep stop words as-is
+            if word_clean in stop_words:
+                output_parts.append(word)
+                i += 1
+                continue
+            
+            # Try 2-word phrase first (if not at end and next word is not stop word)
+            phrase_matched = False
+            if i < len(original_words) - 1:
+                next_word = original_words[i + 1]
+                next_word_clean = next_word.lower().strip('.,!?;:()[]{}')
                 
-                # Merge best phrase results
-                if phrase_results:
-                    best_phrases = [r for r in phrase_results if r['sanskrit']]
-                    if best_phrases:
-                        main_result['phrase_results'] = best_phrases
-                        # Use best phrase result if better
-                        best_phrase = max(best_phrases, key=lambda x: x.get('score', 0.0))
-                        if best_phrase['score'] > main_result['score']:
-                            main_result = best_phrase
-                            main_result['merged_from_phrases'] = True
+                if next_word_clean not in stop_words:
+                    phrase = f"{word_clean} {next_word_clean}"
+                    phrase_result = self.process_chunk(phrase)
+                    
+                    if phrase_result.get('sanskrit') and phrase_result.get('score', 0.0) >= 0.60:
+                        # Good phrase match
+                        output_parts.append(phrase_result.get('sanskrit'))
+                        word_results.append(phrase_result)
+                        total_confidence += phrase_result.get('score', 0.0)
+                        matched_count += 2
+                        i += 2  # Skip both words
+                        phrase_matched = True
+            
+            if not phrase_matched:
+                # Try single word match
+                word_result = self.process_chunk(word_clean)
+                
+                if word_result.get('sanskrit') and word_result.get('score', 0.0) >= 0.60:
+                    # Good match found
+                    output_parts.append(word_result.get('sanskrit'))
+                    word_results.append(word_result)
+                    total_confidence += word_result.get('score', 0.0)
+                    matched_count += 1
+                else:
+                    # No good match - keep original English word
+                    output_parts.append(word)
+                
+                i += 1
+        
+        # Build final output
+        sanskrit_output = ' '.join(output_parts)
+        
+        # Calculate average confidence
+        avg_confidence = total_confidence / matched_count if matched_count > 0 else 0.0
+        
+        # Create summary result
+        summary_result = {
+            'iteration': 'word-by-word',
+            'chunk': text,
+            'sanskrit': sanskrit_output,
+            'score': avg_confidence,
+            'breakdown': {},
+            'decision': Decision.ACCEPT if matched_count > 0 else Decision.REJECT,
+            'reason': f'Processed {matched_count} words/phrases, {len(original_words) - matched_count} kept in English'
+        }
         
         return {
             'original_text': text,
             'preprocessed': preprocessed,
-            'final_result': main_result,
-            'sanskrit_output': main_result.get('sanskrit', ''),
-            'confidence': main_result.get('score', 0.0)
+            'final_result': summary_result,
+            'sanskrit_output': sanskrit_output,
+            'confidence': avg_confidence,
+            'word_results': word_results,
+            'matched_count': matched_count,
+            'total_words': len(original_words)
         }
 
 def main():
