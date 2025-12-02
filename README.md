@@ -2,6 +2,8 @@
 
 **EST** is a revolutionary semantic tokenization engine that converts English text to Sanskrit words based on contextual meaning matching, leveraging the rich semantic structure of Sanskrit language.
 
+![EST Architecture](assets/EST%20Architecture.png)
+
 ## 🚀 **Features**
 
 - **Semantic Tokenization**: Converts English to Sanskrit based on meaning, not direct translation
@@ -140,8 +142,6 @@ Decoder: Sanskrit → English (95% context retrieval)
 7. **Decoder**: Sanskrit → English with 95% context retrieval
 
 ### **Architecture Diagram**
-
-![EST Architecture Flow](assets/EST%20Architecture.png)
 
 The diagram above shows the complete dual-approach architecture with:
 - **Semantic Chunking**: SVO relationship extraction
