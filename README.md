@@ -432,7 +432,6 @@ EST uses a **dual-approach architecture**:
 
 For complete architecture documentation, see:
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Comprehensive architecture guide
-- [ARCHITECTURE_FLOWCHART.html](ARCHITECTURE_FLOWCHART.html) - Interactive flowchart
 
 ## 🤝 **Contributing**
 
