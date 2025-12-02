@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Comprehensive Tokenizer Benchmark - Dark Theme</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        .matrix-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .chart-box {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(2, 8, 20, 0.4);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .chart-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(2, 132, 199, 0.25);
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #7dd3fc;
+            letter-spacing: 0.5px;
+        }
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #7dd3fc;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔄 Comprehensive Tokenizer Benchmark - Dark Theme</h1>
+    
+    <div class="matrix-container">
+        <div class="chart-box">
+            <div class="chart-title">📊 Token Reduction: Lower is Better</div>
+            <div class="chart-wrapper">
+                <canvas id="tokenReduction"></canvas>
+            </div>
+        </div>
+        <div class="chart-box">
+            <div class="chart-title">⚡ Encoding Speed: Lower is Better</div>
+            <div class="chart-wrapper">
+                <canvas id="encodingSpeed"></canvas>
+            </div>
+        </div>
+        <div class="chart-box">
+            <div class="chart-title">💾 Space Saved: Positive = Compression</div>
+            <div class="chart-wrapper">
+                <canvas id="spaceSaved"></canvas>
+            </div>
+        </div>
+        <div class="chart-box">
+            <div class="chart-title">🎯 Context Retrieval: Higher is Better</div>
+            <div class="chart-wrapper">
+                <canvas id="contextRetrieval"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Common chart configuration
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#cbd5e1',
+                        font: {
+                            size: 12,
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        },
+                        padding: 15
+                    }
+                },
+                title: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                    titleColor: '#7dd3fc',
+                    bodyColor: '#e2e8f0',
+                    borderColor: 'rgba(125, 211, 252, 0.3)',
+                    borderWidth: 1,
+                    padding: 12,
+                    displayColors: false,
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '%';
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: 'rgba(148, 163, 184, 0.1)',
+                        borderColor: 'rgba(148, 163, 184, 0.2)'
+                    },
+                    ticks: {
+                        color: '#94a3b8',
+                        font: {
+                            size: 11,
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
+                    }
+                },
+                y: {
+                    grid: {
+                        color: 'rgba(148, 163, 184, 0.1)',
+                        borderColor: 'rgba(148, 163, 184, 0.2)'
+                    },
+                    ticks: {
+                        color: '#94a3b8',
+                        font: {
+                            size: 11,
+                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                        }
+                    }
+                }
+            }
+        };
+
+        // Token Reduction Chart
+        new Chart(document.getElementById('tokenReduction'), {
+            type: 'bar',
+            data: {
+                labels: ["GPT-2", "SentencePiece", "Chinese", "EST"],
+                datasets: [{
+                    label: 'Token Reduction',
+                    data: [-18.19, -31.35, -46.97, 55.0],
+                    backgroundColor: ['#38bdf8', '#fb7185', '#34d399', '#fbbf24'],
+                    borderColor: ['#0ea5e9', '#f43f5e', '#10b981', '#f59e0b'],
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                ...commonOptions,
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: {
+                        ...commonOptions.plugins.legend,
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Encoding Speed Chart
+        new Chart(document.getElementById('encodingSpeed'), {
+            type: 'bar',
+            data: {
+                labels: ["GPT-2", "SentencePiece", "Chinese", "EST"],
+                datasets: [{
+                    label: 'Encoding Time (ms)',
+                    data: [0.132, 0.038, 0.001, 1036.04],
+                    backgroundColor: ['#38bdf8', '#fb7185', '#34d399', '#fbbf24'],
+                    borderColor: ['#0ea5e9', '#f43f5e', '#10b981', '#f59e0b'],
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    ...commonOptions.scales,
+                    y: {
+                        ...commonOptions.scales.y,
+                        type: 'logarithmic',
+                        title: {
+                            display: true,
+                            text: 'Time (ms) - Log Scale',
+                            color: '#94a3b8',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: {
+                        ...commonOptions.plugins.legend,
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Space Saved Chart
+        new Chart(document.getElementById('spaceSaved'), {
+            type: 'bar',
+            data: {
+                labels: ["GPT-2", "SentencePiece", "Chinese", "EST"],
+                datasets: [{
+                    label: 'Space Saved',
+                    data: [-18.07, -22.37, 85.98, 40.0],
+                    backgroundColor: ['#ef4444', '#ef4444', '#22c55e', '#22c55e'],
+                    borderColor: ['#dc2626', '#dc2626', '#16a34a', '#16a34a'],
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                ...commonOptions,
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: {
+                        ...commonOptions.plugins.legend,
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Context Retrieval Chart
+        new Chart(document.getElementById('contextRetrieval'), {
+            type: 'bar',
+            data: {
+                labels: ["GPT-2", "SentencePiece", "Chinese", "EST"],
+                datasets: [{
+                    label: 'Context Retrieval',
+                    data: [90.0, 100.0, 95.0, 95.0],
+                    backgroundColor: ['#fb923c', '#22c55e', '#fb923c', '#fb923c'],
+                    borderColor: ['#f97316', '#16a34a', '#f97316', '#f97316'],
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    ...commonOptions.scales,
+                    y: {
+                        ...commonOptions.scales.y,
+                        beginAtZero: true,
+                        max: 105
+                    }
+                },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: {
+                        ...commonOptions.plugins.legend,
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
