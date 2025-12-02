@@ -296,7 +296,6 @@ est-tokenizer/
 │   └── check_dictionary.csv # 33,425 Sanskrit words
 ├── examples/                # Usage examples
 ├── ARCHITECTURE.md          # Detailed architecture docs
-├── ARCHITECTURE_FLOWCHART.html # Interactive diagram
 ├── benchmark_charts.html    # Interactive benchmark charts
 ├── benchmark_results.json   # Benchmark results data
 ├── setup.py
