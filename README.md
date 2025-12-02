@@ -152,7 +152,6 @@ The diagram above shows the complete dual-approach architecture with:
 
 For detailed architecture documentation, see:
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Comprehensive architecture guide
-- [ARCHITECTURE_FLOWCHART.html](ARCHITECTURE_FLOWCHART.html) - Interactive flowchart
 
 ## 📊 **Performance**
 
@@ -489,7 +488,6 @@ View interactive benchmark charts:
 ## 🔗 **Related Documentation**
 
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Complete architecture documentation
-- [ARCHITECTURE_FLOWCHART.html](ARCHITECTURE_FLOWCHART.html) - Interactive architecture diagram
 - [benchmark_charts.html](benchmark_charts.html) - Interactive benchmark visualizations
 - [benchmark_results.json](benchmark_results.json) - Detailed benchmark data
 
