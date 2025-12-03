@@ -1,5 +1,5 @@
 ---
-title: 'EST: English-to-Sanskrit Tokenizer - A Sanskrit-Based Semantic Tokenization System for NLP'
+title: 'EST: A Morphology-Guided English-to-Sanskrit Tokenizer for Compact NLP Representations'
 tags:
   - Python
   - NLP
