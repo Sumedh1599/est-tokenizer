@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "EST: English-to-Sanskrit Tokenizer"
+authors:
+  - family-names: Patil
+    given-names: Sumedh
+    orcid: https://orcid.org/0009-0003-1901-4250
+version: 1.0.0
+doi: 10.5281/zenodo.17807018
+date-released: 2024-12-04
+license: MIT
+repository-code: https://github.com/Sumedh1599/est-tokenizer
