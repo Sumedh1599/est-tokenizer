@@ -1,4 +1,4 @@
-# **EST (English → Sanskrit Tokenizer)**
+# **EST: A Morphology-Guided English-to-Sanskrit Tokenizer for Compact NLP Representations**
 
 **EST** is a revolutionary semantic tokenization engine that converts English text to Sanskrit words based on contextual meaning matching, leveraging the rich semantic structure of Sanskrit language.
 
