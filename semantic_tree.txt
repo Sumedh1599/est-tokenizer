@@ -1,0 +1,1128 @@
+====================================================================================================
+EST SEMANTIC TREE VISUALIZATION
+====================================================================================================
+
+Total Root Concepts: 80158
+Total Unique Concepts: 109591
+
+====================================================================================================
+
+
+[1] observe events, perceive details
+    📚 Words: 192
+    Sample Sanskrit words:
+      • aMs: See
+      • anyAnya: See
+      • apAk: See
+      • aviravikanyAyaH: See
+      • aSvatTila: See
+    🌿 Child concepts (12): identify objects visual stimuli, identify visual stimuli, identify objects, recognize forms, recognize visual stimuli, identify visual objects, witness visual phenomena, recognize objects, identify subjects, recognize objects, understand vision
+      ... and 4 more
+
+
+[2] To go, move
+    📚 Words: 50
+    Sample Sanskrit words:
+      • ac: To go, move. to honour; request, ask etc; connected with A term for vo
+      • kamb: To go, move
+      • camb: To go, move
+      • carb: To go, move. To eat
+      • Camp: To go, move
+    🌿 Child concepts (25): fulfill requests honorably, action transport movement, perform locomotion action, consume food sustenance, initiate locomotion actions, perform physical displacement, safeguard assets, people, decorate objects, surfaces
+      ... and 17 more
+
+
+[3] classify plant species
+    📚 Words: 50
+    Sample Sanskrit words:
+      • anirmAlyA: of a medicinal plant
+      • arizwakaH: The soap-berry tree
+      • itkawaH: A kind of grass
+      • inAnI: A kind of tree
+      • uttAnakaH: A species of the Cyperus grass
+    🌿 Child concepts (100): express longing movement, produce wood and leaves, exhibit medicinal properties, botanical specimen, identify fruit tree varieties, agriculture crop, produce wood and fruit, study plant biology
+      ... and 92 more
+
+
+[4] observe visual stimuli
+    📚 Words: 32
+    Sample Sanskrit words:
+      • kanIka: See
+      • kvaNguH: See
+      • gUraRam: See
+      • jEjjawaH: See
+      • Du: See
+    🌿 Child concepts (5): witness events, perceive sensory information, experience visual perception, perceive visual information, perceive objects or scenes
+
+
+[5] classify aquatic animal
+    📚 Words: 32
+    Sample Sanskrit words:
+      • era(la)NgaH: A kind of fish
+      • karaRqin: A fish
+      • kavayI: A kind of fish
+      • kAkecI: A kind of fish
+      • kAtalaH: A large species of fish
+    🌿 Child concepts (9): belong to fish species, belong to Pisces, identify fish species, represent deity Vishnu, identify small fish species, contain liquid vessels, curry ingredient, categorize plant species
+      ... and 1 more
+
+
+[6] To go: Movement from one place
+    📚 Words: 25
+    Sample Sanskrit words:
+      • aW: To go
+      • ay: To go
+      • ir: To go
+      • ur: To go
+      • fR: To go
+    🌿 Child concepts (2): initiate travel action, initiate travel journey action
+
+
+[7] move person or object through space
+    📚 Words: 20
+    Sample Sanskrit words:
+      • camp: To go, move
+      • jun: To go, move
+      • tfkz: To go, move
+      • Drij: To go, move
+      • Dvaj: To go, move
+    🌿 Child concepts (2): travel from one place to another, travel across a distance
+
+
+[8] Śiva epithet divine being
+    📚 Words: 19
+    Sample Sanskrit words:
+      • kaWamardaH: An epithet of Śiva
+      • kAhaliH: An epithet of Śiva
+      • kfzkaraH: An epithet of Śiva
+      • kodaRqin: An epithet of Śiva
+      • GawiGawaH: An epithet of Śiva
+    🌿 Child concepts (2): describe deity characteristics, describe deity attributes
+
+
+[9] classify avian species
+    📚 Words: 18
+    Sample Sanskrit words:
+      • aprowaH: A kind of bird
+      • alajaH: A kind of bird
+      • kakaraH: A kind of bird
+      • kaYjalaH: A kind of bird
+      • kara(re)wuH: A kind of bird
+    🌿 Child concepts (34): inhabit specific regions, identify bird types, belong to poultry, represent hand position gesture, belong to vertebrate class, identify goose type, apply protective coating, belong to Aśoka lineage
+      ... and 26 more
+
+
+[10] classify animal species
+    📚 Words: 17
+    Sample Sanskrit words:
+      • AYjineyaH: A kind of insect, a kind of lizard
+      • ArSa: Belonging to the antelope
+      • upalaDipriyaH: A kind of antelope
+      • EndraSiraH: A species of elephant
+      • kakkawaH: A kind of animal
+    🌿 Child concepts (46): identify scorpion types, describe speed characteristics, produce clarified butter, categorize reptile family, relate to antelope characteristics, inhabit subterranean environments, mother familial role, categorize mammal antelope
+      ... and 38 more
+
+
+[11] To go
+    📚 Words: 15
+    Sample Sanskrit words:
+      • amb: To go. To sound
+      • uW: To go. To strike or knock down
+      • fS: A Sautra root To go. To kill
+      • tvaYc: To go. To contract
+      • nakz: To go. To come near, approach
+    🌿 Child concepts (16): produce sound waves, perform forceful impact action, perform action kill, initiate movement, travel, perform movement action, approach proximity movement, safeguard entities, interact physically with objects
+      ... and 8 more
+
+
+[12] To hurt, kill
+    📚 Words: 15
+    Sample Sanskrit words:
+      • jUz: To hurt, kill
+      • trup: To hurt, kill
+      • durv: To hurt, kill
+      • DUr: To hurt, kill. To go, move
+      • nuq: To hurt, kill
+    🌿 Child concepts (7): inflict physical damage, perform physical harm actions, classify animal behavior, cause harm, inflict pain, stop movement, firm state, establish rigidity, become solid, cause physical damage
+
+
+[13] To sound: produce audible tones
+    📚 Words: 14
+    Sample Sanskrit words:
+      • amB: To sound
+      • kaS: To sound
+      • kur: To sound
+      • kE: To sound
+      • Ku: To sound
+    🌿 Child concepts (4): create auditory sensations, create acoustic vibrations, generate auditory sensations, extend musical notes duration
+
+
+[14] classify elephant as a large mammal
+    📚 Words: 13
+    Sample Sanskrit words:
+      • kawinI: An elephant
+      • karawin: An elephant
+      • karaBin: An elephant
+      • karRikin: An elephant
+      • GaRwAlaH: An elephant
+    🌿 Child concepts (6): identify animal species, study animal species in zoology, zoology study of animals, study animal behavior in zoo, study animal behavior in zoology, study animal species
+
+
+[15] observe perceive look
+    📚 Words: 12
+    Sample Sanskrit words:
+      • taqAGAtaH: See
+      • prakzara: See
+      • bAqaveya: See
+      • matallI: See
+      • yuYjin: See
+    🌿 Child concepts (3): detect visual stimuli, recognize visual stimuli, identify visual objects
+
+
+[16] H2O: A colorless, odorless, tasteless liquid
+    📚 Words: 11
+    Sample Sanskrit words:
+      • akzitaram: Water
+      • kaSas: Water
+      • kulInasam: Water
+      • kzapaH: Water
+      • pAyam: Water
+    🌿 Child concepts (1): Essential for life
+
+
+[17] desire outcomes
+    📚 Words: 11
+    Sample Sanskrit words:
+      • aBimanas: Intent on, desirous of; anxious, longing for
+      • izi: Wishing, desiring
+      • uSI: Wish, desire
+      • fcCakA: Wish, desire
+      • ezitf: Wishing, desirous
+    🌿 Child concepts (10): express strong longing needs, express longing needs, express emotional longing, general concept, express wants needs, classify emotional states, pregnancy biological, initiate legal action
+      ... and 2 more
+
+
+[18] observe perceive visual information
+    📚 Words: 11
+    Sample Sanskrit words:
+      • avyaktika: See
+      • nEpuRa: See
+      • pArApArIRa: See
+      • varvaRA: See
+      • vArI: See
+    🌿 Child concepts (4): recognize objects around us, detect sensory input, recognize objects surroundings, interpret sensory input accurately
+
+
+[19] instrument produce sound
+    📚 Words: 11
+    Sample Sanskrit words:
+      • ANkzI: A musical instrument, a tabor
+      • fllarI: A kind of musical instrument
+      • kawambaH: A kind of musical instrument. An arrow
+      • kalAhakaH: A kind of musical instrument
+      • kAhakA: A kind of musical instrument
+    🌿 Child concepts (3): classify percussion instrument, classify musical devices, classify musical instruments
+
+
+[20] tree: a woody perennial plant
+    📚 Words: 10
+    Sample Sanskrit words:
+      • akzakaH: of a tree
+      • atikandakaH: of a tree
+      • aruzkaH: of a tree
+      • ArtagalaH: of a tree
+      • uddAnakaH: of a tree
+    🌿 Child concepts (3): classify plant trees, classify plant species, classify plant woody species
+
+
+[21] classify bird species
+    📚 Words: 10
+    Sample Sanskrit words:
+      • anuBAsaH: A kind of crow
+      • upacakraH: A variety of the ruddy goose
+      • kaNkeruH: A kind of crow
+      • GulaGulAravaH: A sort of pigeon
+      • naSAkaH: A kind of crow
+    🌿 Child concepts (30): describe poor, worthless individuals, identify corvid family member, describe negative attributes, identify crow types, identify cuckoo types, identify carrion eating birds, inflame lighting virulence, identify goose subspecies
+      ... and 22 more
+
+
+[22] plant characteristics
+    📚 Words: 10
+    Sample Sanskrit words:
+      • adArikA: of a plant
+      • ambazWikA: of a plant
+      • asPotaH: of a plant
+      • AcArI: of a plant
+      • kandirI: of a plant
+    🌿 Child concepts (3): classify botanical species, classify botanical specimens, describe botanical features
+
+
+[23] Protecting entities
+    📚 Words: 10
+    Sample Sanskrit words:
+      • aBiguptiH: Guarding, protecting. Self-denial, self-control
+      • avAkza: A guardian, keeper
+      • goDeraH: A protector, guardian
+      • trAtf: A guardian, defender, protector. Protecting, defending
+      • parirakzakaH: A protector, guardian
+    🌿 Child concepts (8): exhibiting self-discipline restraint, maintain security and order, safeguard vulnerable individuals, defend individuals or assets, maintain safety and security, maintain security vigilance, observing rules practices, maintaining safety and security
+
+
+[24] see: To perceive with the eyes.
+    📚 Words: 9
+    Sample Sanskrit words:
+      • ajjam: see
+      • anarGyeya: see
+      • ApaskaraH: see
+      • iqvaraH: see
+      • upanItiH: see
+    🌿 Child concepts (2): observe visual phenomena, observe visual information
+
+
+[25] flowing water course
+    📚 Words: 9
+    Sample Sanskrit words:
+      • aDfzyA: of a river
+      • uttAnikA: of a river
+      • udDyaH: of a river
+      • candanI: of a river
+      • pArA: of a river
+    🌿 Child concepts (4): define geographical waterway, define river geographical feature, define geographical river systems, characterize fluvial landscapes
+
+
+[26] classify reptile species
+    📚 Words: 9
+    Sample Sanskrit words:
+      • aBIraRI: A kind of serpent
+      • aligardaH: A kind of snake
+      • kIlAlin: A lizard, chameleon
+      • goDikA: A kind of lizard
+      • mAkuliH: A kind of snake
+    🌿 Child concepts (18): biological organism, belong to serpent family, describe unusual morphology”, describe serpentine characteristics, represent royal animal status, identify chameleon lizards, identify aquatic animals, represent cord material
+      ... and 10 more
+
+
+[27] discard unwanted items
+    📚 Words: 9
+    Sample Sanskrit words:
+      • apakzip: To throw away or down, take away, remove
+      • apamitya: Ved. To be thrown away. Debt
+      • apahastayati: Den. To seize by the neck and drive out; hence throw away, abandon, le
+      • apahastita: Thrown away, discarded, abandoned, cast off, given up
+      • apAkIrRa: Rejected, discarded
+    🌿 Child concepts (15): remove objects from location, manage financial obligations, abandon or desert individuals, reject undesirable possessions, relinquish possessions deliberately, refuse obsolete materials, reject undesirable things, inflict harm, destruction, death
+      ... and 7 more
+
+
+[28] catch fish in the ocean
+    📚 Words: 9
+    Sample Sanskrit words:
+      • kupinin: A fisherman
+      • kEvartaH: A fisherman
+      • kEvartakaH: A fisherman
+      • Cowin: A fisherman
+      • DIvarakaH: A fisherman
+    🌿 Child concepts (3): reel in fish from sea, reel in fish from the sea, marine life caught by fishing
+
+
+[29] epithet divine being
+    📚 Words: 9
+    Sample Sanskrit words:
+      • kumodakaH: An epithet of Viṣṇu
+      • deveSayaH: An epithet of Viṣṇu
+      • nandakin: An epithet of Viṣṇu
+      • nAmiH: An epithet of Viṣṇu
+      • padmeSayaH: An epithet of Viṣṇu
+    🌿 Child concepts (5): describe deity Vishnu, describe Krishna religious, designate religious figure, describe deity characteristics, generate metal substance
+
+
+[30] move person or object in direction
+    📚 Words: 9
+    Sample Sanskrit words:
+      • Gamb: To go, move
+      • naK: To go, move
+      • nez: To go, move
+      • parp: To go, move
+      • pes: To go, move
+    🌿 Child concepts (3): travel across a distance, travel to a new location, travel across distance
+
+
+[31] classify tree species
+    📚 Words: 8
+    Sample Sanskrit words:
+      • AtfpyaH: A kind of tree, the custard apple tree The fruit of the tree
+      • upavawaH: The tree Buchanania Latifolia
+      • kArzyaH: The tree Shorea robusta
+      • nUdaH: A kind of mulberry tree
+      • maDUlaH: A kind of tree. The mango tree. Liquorice. A kind of citron. Pollen. H
+    🌿 Child concepts (14): remove unwanted foliage, produce custard apple fruit, describe tree characteristics, identify *Buchanania Latifolia* plant, yield resin product, identify Shorea robusta tree, belong to mulberry family, mango tree fruit plant
+      ... and 6 more
+
+
+[32] classify arthropods invertebrates
+    📚 Words: 8
+    Sample Sanskrit words:
+      • avaSInaH: A scorpion
+      • Alin: A scorpion
+      • KarjUrakaH: A scorpion
+      • nigojAhakaH: A scorpion
+      • palyaSanaH: A scorpion
+    🌿 Child concepts (1): possess venomous stinger
+
+
+[33] release entities from constraints
+    📚 Words: 8
+    Sample Sanskrit words:
+      • avasarjanam: Liberation
+      • udDArita: Taken out, drawn forth, extricated, released
+      • nirmuc: To free, liberate, release; To leave, quit, abandon. To cast off
+      • parimukti: Liberation
+      • pramuktiH: Liberation
+    🌿 Child concepts (7): achieve freedom from oppression, extract items from sources, abandon situations or people, liberate individuals from oppression, liberate individuals from bondage, lack entities of resources, express emotions intensely
+
+
+[34] To hurt, injure, kill
+    📚 Words: 8
+    Sample Sanskrit words:
+      • knaT: To hurt, injure, kill
+      • Caz: To hurt, injure, kill
+      • jUr: To hurt, injure, kill. To be angry with ; To grow old
+      • DUrv: To hurt, injure, kill
+      • buw: To hurt, injure, kill
+    🌿 Child concepts (4): cause physical damage, cause physical harm, express negative emotions intensely, inflict physical damage
+
+
+[35] “The sun”
+OUTPUT: “generate light and heat
+    📚 Words: 7
+    Sample Sanskrit words:
+      • aYjizWaH: The sun
+      • tantrAyin: The sun
+      • dfSAluH: The sun
+      • BAtuH: The sun
+      • BAluH: The sun
+    🌿 Child concepts (2): celestial body star, classify celestial body
+
+
+[36] conceal information
+    📚 Words: 7
+    Sample Sanskrit words:
+      • apalApin: One who denies, disowns, hides, conceals etc; concealing
+      • aprakASaka: Making dark; not disclosing etc
+      • aprakASya: Not to be disclosed, to be kept secret
+      • ApracCanna: Secret, hidden
+      • nigUQa: Hidden, concealed; Secret, private; Mysterious, obscure. Inscrutable. 
+    🌿 Child concepts (10): deny ownership claims, obscure visibility, maintain confidentiality, keep things private, maintain secrecy, maintain privacy, express mistrust, general behavior
+      ... and 2 more
+
+
+[37] Praise positive attributes
+    📚 Words: 7
+    Sample Sanskrit words:
+      • aBisvartf: Praising; invoking
+      • nu(nU)ta: Praised, extolled etc
+      • nutiH: Praise, eulogium, panegyric; Worship, reverence
+      • praSaMsanam: Praising, extolling
+      • praSaMsita: Praised, extolled, applauded
+    🌿 Child concepts (7): call upon divine power, celebrate achievements and merits, express reverence admiration, acknowledge excellence and merit, acknowledge worthy achievements, honor individuals deserving recognition, exhibit social grace manners
+
+
+[38] Desire outcomes
+    📚 Words: 7
+    Sample Sanskrit words:
+      • aByezaRam: Desiring, wishing. Going towards, attack
+      • ezwavya: To be striven after, wished for; Desire
+      • eha: Ved. Desirous. Striving well
+      • garDaH: Desire, eagerness. Greediness
+      • gfdDin: Desirous, eagerly longing for
+    🌿 Child concepts (7): initiate aggressive actions, pursue goals, strive for improvement, exhibit emotional drive, express strong longing needs, express longing feelings, seek desired possessions
+
+
+[39] Shine brightly
+    📚 Words: 7
+    Sample Sanskrit words:
+      • avaBAsin: Shining, bright. The outer skin or cuticle
+      • ABAta: Shining, blazing. Appearing, visible
+      • kASizRu: Shining, brilliant
+      • BAsanta: Shining. Beautiful, handsome. The sun. The moon. An asterism, a star. 
+      • rocamAna: Shining, bright. Lovely, beautiful, charming. A tuft of hair on a hors
+    🌿 Child concepts (7): describe plant outer layer, display visible light, display radiant light, describe aesthetic qualities beauty, describe aesthetic qualities, illuminate objects effectively, express beauty, attractiveness
+
+
+[40] steal property
+    📚 Words: 7
+    Sample Sanskrit words:
+      • Amozin: A thief
+      • kusumAlaH: A thief
+      • pawatkaH: A thief
+      • parAskandin: A thief
+      • mallIkaraH: A thief
+    🌿 Child concepts (1): identify criminal individuals
+
+
+[41] insect classification
+    📚 Words: 7
+    Sample Sanskrit words:
+      • AraNgaraH: A bee
+      • upAdikaH: A sort of insect. of plant
+      • gardaBakaH: A kind of insect. A cutaneous disease, a blotch, eruption
+      • DunDumAraH: A kind of insect The smoke of a house
+      • nIla(lA)NguH: A kind of insect. An insect in general. A kind of fly. A jackal. A lar
+    🌿 Child concepts (7): produce honey pollen, belong to plant kingdom, cause skin abnormalities, produce smoke dwellings, classify insects biological, identify arthropod species, small rodent animal
+
+
+[42] Śiva’s descriptive term
+    📚 Words: 7
+    Sample Sanskrit words:
+      • kuRqin: An epithet of Śiva. A bastard. A horse
+      • wakkaraH: An epithet of Śiva. A blow on the head
+      • Dawin: An epithet of Śiva. The sign Libra of the zodiac. A dealer, trader
+      • mIQuzwamaH: An epithet of Śiva; The sun. A thief
+      • meKalin: An epithet of Śiva. A religious student, a Brahmachārin
+    🌿 Child concepts (7): denote negative characteristics, inflict physical trauma head, zodiac sign Libra, celestial body, the sun, religious student practices, phlegmatic humour bodily state, identify bird species
+
+
+[43] Durgā’s descriptive attribute
+    📚 Words: 7
+    Sample Sanskrit words:
+      • kOwaBI: An epithet of Durgā
+      • kOwIryA: An epithet of Durgā
+      • prakUzmARqI: An epithet of Durgā
+      • baBravI: An epithet of Durgā
+      • bABravI: An epithet of Durgā
+    🌿 Child concepts (4): identify deity qualities, classify deity epithets, identify deity’s characteristic qualities, identify deity characteristics
+
+
+[44] classify mineral substance
+    📚 Words: 7
+    Sample Sanskrit words:
+      • drOReyam: A kind of salt
+      • DOteyaH: A kind of salt
+      • biqam: A kind of salt
+      • rOmam: A kind of salt
+      • loRAraH: A kind of salt
+    🌿 Child concepts (4): identify plant indigo vitriol, produce sodium chloride, belong to salt category, represent crystalline form
+
+
+[45] respond to questions
+    📚 Words: 7
+    Sample Sanskrit words:
+      • pratijalpaH: An answer, reply
+      • pratiBAzA: An answer, a reply
+      • pratimantraRam: An answer, reply
+      • prativac: To speak in reply, answer, reply to
+      • prativARiH: An answer, reply
+    🌿 Child concepts (4): provide information answers, demonstrate proven results, communicate verbal answers, provide information accurately
+
+
+[46] Please provide the English definition you would like me to analyze. I need the text of the definition to extract the semantic roles and create the frames.
+    📚 Words: 6
+    Sample Sanskrit words:
+      • ajakA: ajakA
+
+A fool, simpleton, idiot; a person lacking intelligence or wisd
+      • aTarvaH: aTarvaH:  A kind of barley; a type of grain, often specifically referr
+      • kfv: P
+      • parABAvaH: parABAvaH
+
+A large, powerful, or formidable elephant; a great elephant
+      • vESizwam: vESizwam
+
+A type of drum; a cylindrical drum, often made of clay or me
+
+
+[47] “classify plant species
+    📚 Words: 6
+    Sample Sanskrit words:
+      • anupuzpaH: A kind of reed
+      • AmupaH: The thorny Bamboo; Bambusa Spinosa
+      • ikzvAri(li)kaH: A kind of reed
+      • kahvaH: A kind of cane
+      • kARqikA: A kind of corn A kind of gourd. A part or division of a book
+    🌿 Child concepts (5): belong to grass family”, identify bamboo varieties, produce sugarcane material, produce seeds and grains, identify tropical grasses
+
+
+[48] Praise worthy individuals
+    📚 Words: 6
+    Sample Sanskrit words:
+      • aneman: Ved. Praiseworthy
+      • ABUzeRya: Ved. Praiseworthy
+      • fgmiya: Praiseworthy
+      • prastutiH: Ved. Praise, eulogium
+      • SlAGya: Praised, praiseworthy; Respectable, venerable. Laudable, commendable
+    🌿 Child concepts (4): describe positive attributes, receive positive recognition, express admiration verbally, exhibit admirable qualities
+
+
+[49] Please provide the English definition you want me to analyze. I need the text of the definition to extract the semantic roles and create the frames.
+    📚 Words: 6
+    Sample Sanskrit words:
+      • apavarta: apavarta
+
+“Abandonment; renunciation; giving up; cessation; cessation 
+      • apasala: apasaLaḥ
+
+A well, cistern, reservoir; a place for collecting water; a 
+      • abBra: abBra (अब्र)
+
+1.  To deny, reject, refuse; to disallow; to censure; to
+      • kzuRRa: kzuRRa; A crow; a black bird of the genus Corvus; a dark, coarse, and 
+      • dAs: dAsaḥ; A male slave, servant, or dependent; a low-caste person; a serv
+
+
+[50] protect entities from harm
+    📚 Words: 6
+    Sample Sanskrit words:
+      • aBirakz: To protect, preserve, keep, guard, help; To rule over, govern ; comman
+      • gopAyaka: A preserver, defender, one who guards
+      • trA: To protect; see also
+      • trE: To protect, preserve, rescue or save from, defend from ; -with to save
+      • pratipAl: To protect, preserve, guard, defend. To wait for, await; To act up to,
+    🌿 Child concepts (9): resist external forces, govern populations effectively, classify emotions envy jealousy, maintain security and order, safeguard against threats, safeguard vulnerable targets, defend against threats and dangers, maintain stability and order
+      ... and 1 more
+
+
+[51] plant characteristics, growth, and development
+    📚 Words: 6
+    Sample Sanskrit words:
+      • aruhA: of a plant
+      • alaselukA: of a plant
+      • upadI: of a plant
+      • kirAtinI: of a plant
+      • kusumBalA: of a plant
+    🌿 Child concepts (1): classify botanical specimens
+
+
+[52] seek assistance
+    📚 Words: 6
+    Sample Sanskrit words:
+      • avasyati: Den. Ved. To seek favour or assistance
+      • avasyu: Ved. Desiring favour, help or protection
+      • ASrayaRIya: To be had recourse to; To be practised or followed etc
+      • upayAcaka: One who asks or solicits, suitor, beggar
+      • prArT: To ask or pray for, beg, request; To demand in marriage. To wish or lo
+    🌿 Child concepts (6): obtain support, request support, apply methods techniques, request favors, desire outcomes, request favors or support
+
+
+[53] Sacrifice offering
+    📚 Words: 6
+    Sample Sanskrit words:
+      • avinaH: A sacrificer. An officiating priest at a sacrifice
+      • yajiH: A sacrificer. The act of sacrificing. A sacrifice
+      • yAjaH: A sacrificer. Boiled rice. Food in general
+      • yAjukaH: A sacrificer
+      • havanIya: Sacrificial. Anything fit for an oblation. Clarified butter or ghee
+    🌿 Child concepts (5): perform religious rituals, perform act of giving, prepare boiled rice, perform religious act, provide for needs
+
+
+[54] define a horse as an animal
+    📚 Words: 6
+    Sample Sanskrit words:
+      • avyaTayaH: A horse
+      • turaNgakaH: A horse
+      • pItin: A horse
+      • yuyuH: A horse
+      • rasnam: A thing, object A horse. A tongue
+    🌿 Child concepts (2): domestic animal classification, study horse biology
+
+
+[55] tree: A woody perennial plant
+    📚 Words: 6
+    Sample Sanskrit words:
+      • AcCA(cCu)kaH: of a tree
+      • kAramBA: of a tree
+      • koSAtakI: of a tree
+      • damanakaH: of a tree
+      • prapunA(nnA)waH, -qaH: of a tree
+    🌿 Child concepts (1): classify plant species
+
+
+[56] Praise worthy actions
+    📚 Words: 6
+    Sample Sanskrit words:
+      • Iqya: To be praised or glorified, praiseworthy, laudable
+      • pARya: Praiseworthy, commendable
+      • praSasya: Compar. or , superl. or Praiseworthy, commendable, excellent
+      • Sasya: from Best, excellent. Praiseworthy, laudable. a which is to be recited
+      • stutya: Laudable, commendable, praiseworthy
+    🌿 Child concepts (4): elevate individuals to honor, recognize positive qualities, describe positive qualities, describe excellent qualities
+
+
+[57] classify animal livestock
+    📚 Words: 6
+    Sample Sanskrit words:
+      • culumpA: A she-goat
+      • CagalakaH: A goat
+      • CAgikA: A she-goat
+      • saYjA: A she-goat
+      • stunakaH: A goat
+    🌿 Child concepts (11): describe reproductive events”, domain agriculture animal husbandry, represent time duration, identify female goat species, belong to Bovidae family, identify goat breed, domestic animal herd, measure plant bulb size
+      ... and 3 more
+
+
+[58] To go or move
+    📚 Words: 6
+    Sample Sanskrit words:
+      • kaRw: To go or move
+      • carG: To go or move
+      • cell: . To go or move. To shake, tremble
+      • Jyu: To go or move
+      • Tarv: To go or move
+    🌿 Child concepts (5): perform locomotion action, action movement transport, experience physical vibration, action movement transportation, exhibit physical vibration
+
+
+[59] identify a crow
+    📚 Words: 6
+    Sample Sanskrit words:
+      • kAravaH: A crow
+      • kAlolaH: A crow
+      • kunakaH: A crow
+      • prahfzwakaH: A crow
+      • mOka(ku)liH: A crow
+    🌿 Child concepts (3): observe bird behavior, observe bird in nature, observe a bird
+
+
+[60] classify grain agricultural
+    📚 Words: 5
+    Sample Sanskrit words:
+      • aNgaBaH: A kind of rice
+      • aSUkajA: A kind of rice
+      • kedArakaH: A kind of rice
+      • prasAtikA: A kind of rice
+      • sArAmuKaH: A kind of rice
+    🌿 Child concepts (5): identify rice varieties, describe plant characteristics, identify rice plant species, identify river Brahmaputra, identify rice variety
+
+
+[61] define bird species in biology
+    📚 Words: 5
+    Sample Sanskrit words:
+      • aNgas: A bird
+      • kaWAkuH: A bird
+      • patatriH: A bird
+      • pipatizat: A bird
+      • PukaH: A bird
+    🌿 Child concepts (1): classify avian animals
+
+
+[62] forge metal objects
+    📚 Words: 5
+    Sample Sanskrit words:
+      • ayogUH: A blacksmith
+      • kArmArakam: A smith's work
+      • DamakaH: A blacksmith
+      • DmAkAraH: A blacksmith, smith
+      • vyokAraH: A blacksmith
+    🌿 Child concepts (1): craft tools and weapons
+
+
+[63] Observe visual stimuli
+    📚 Words: 5
+    Sample Sanskrit words:
+      • avalokaka: Looking at, wishing to see
+      • avalokanam: Looking at, beholding, seeing; Looking over, commanding a view of; Sig
+      • avalokin: Looking at, seeing
+      • cAyitf: Ved. Observing, seeing
+      • viSvaMkaraH: The eye
+    🌿 Child concepts (5): desire sight perception, perceive objects, people, places, perceive objects or scenes, perceive sensory information, human sensory organ
+
+
+[64] mountain formation geological
+    📚 Words: 5
+    Sample Sanskrit words:
+      • aSmaH: A mountain, a rock A cloud
+      • kuwwIraH: A small mountain
+      • DAsas: Ved. A mountain
+      • nagaH: A mountain; A tree; A plant in general. The sun. A serpent. The number
+      • mekalaH: of a mountain; A goat- epithets of the river Narmadā
+    🌿 Child concepts (5): classify landform natural features, define landform small size, define geographical landform, plant life botanical category, goat association animal species
+
+
+[65] time period of 365 days
+    📚 Words: 5
+    Sample Sanskrit words:
+      • udvatsaraH: A year
+      • tarbawaH: A year
+      • mAsalaH: A year
+      • varizam: A year
+      • svamekaH: A year
+    🌿 Child concepts (2): measure calendar cycles, measure calendar duration
+
+
+[66] Protecting entities from harm
+    📚 Words: 5
+    Sample Sanskrit words:
+      • uruzyu: Desirous of protecting
+      • jaMs: To protect. To liberate, release, set free
+      • SaraRyuH: A protector. A cloud. Wind
+      • SarmaRya: Sheltering, protecting
+      • saMguptiH: Guarding, protection. Concealment
+    🌿 Child concepts (5): Desire motivates protective action, liberate individuals from constraints, classify atmospheric weather phenomena, Provide refuge from elements, safeguarding vulnerable individuals
+
+
+[67] observe events
+    📚 Words: 5
+    Sample Sanskrit words:
+      • OpaniDya: See
+      • majjUzA: See
+      • vaka: See
+      • vezyA: See
+      • sUtyA: See
+    🌿 Child concepts (2): perceive visual stimuli, perceive visual information
+
+
+[68] Wind: Moving air; a current of air; a breeze.
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kampAkaH: Wind
+      • DavARakaH: Wind
+      • mIvan: Wind
+      • laGaw: Wind
+      • vahAlaH: Wind
+
+
+[69] shine light
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kAYc: To shine. To bind
+      • kuMS: . To shine. To speak
+      • praBAs: To shine. To appear To illuminate, irradiate
+      • rej: To shine. To shake, tremble
+      • vitap: Ā. To shine; To warm, heat. To warm oneself
+    🌿 Child concepts (5): bind objects together, communicate verbal messages, illuminate objects, cause vibration movement, warm body heat
+
+
+[70] define horse as a domestic animal
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kiRvin: A horse
+      • kuruwin: A horse
+      • turaNgamaH: A horse
+      • pracelakaH: A horse
+      • prAyudDezin: A horse
+    🌿 Child concepts (2): study animal behavior, study equine species
+
+
+[71] rule a queen in the royal family
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kukuBA: of a Rāgiṇi
+      • devAlA: of a Rāgiṇī
+      • DanASrI: of a Rāgiṇī
+      • puruvI: of a Rāgiṇī
+      • mallArI: of a Rāgiṇī
+    🌿 Child concepts (1): govern a royal woman
+
+
+[72] To express verbally
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kFt: To mention, repeat, utter; To tell, recite, declare, communicate; To n
+      • pracakz: To say, speak, lay down; To tell, relate. To consider, regard, deem. T
+      • BaR: To say, speak; To describe; To name, call. To sound
+      • BAz: To say, speak, utter; oft. with two acc.; To speak to, address; To tel
+      • vilap: To say, speak. To lament, moan, bewail, cry, weep;To prattle, talk idl
+    🌿 Child concepts (5): communicate information or ideas, communicate information clearly, identify entities through speech, communicate information effectively, lament sorrowful speech
+
+
+[73] grain produce food
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kodAraH: A kind of grain
+      • barawaH: A kind of grain
+      • muSawI: A kind of grain
+      • SyAmakaH: A kind of edible grain A gramineous plant. A kind of grass
+      • SyAmAkaH: A kind of grain or corn
+    🌿 Child concepts (4): classify cereal plant seeds, classify cereal crop plant, classify plant grass species, classify cereal plant species
+
+
+[74] To injure, hurt, kill
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kraT: To injure, hurt, kill
+      • Kaz: To injure, hurt, kill
+      • jaz: To injure, hurt, kill
+      • turv: Ved. To injure, hurt, kill; To excel. To overpower. To save
+      • vaz: To injure, hurt, kill
+    🌿 Child concepts (2): cause physical harm, excel, overpower situations
+
+
+[75] To hurt, injure
+    📚 Words: 5
+    Sample Sanskrit words:
+      • kzaR: To hurt, injure; To break
+      • qim: To hurt, injure
+      • Turv: To hurt, injure
+      • drU: To hurt, injure. To go, move
+      • mAnT: To hurt, injure
+    🌿 Child concepts (4): cause physical damage, inflict physical damage, perform movement actions, cause physical harm
+
+
+[76] classify legume plant species
+    📚 Words: 5
+    Sample Sanskrit words:
+      • mapa(pu)zwaH, -zwakaH: A kind of bean
+      • maya(yu)zwaH, -zwakaH: A kind of bean
+      • mudgazwaH: A kind of bean
+      • sUpyA: A kind of bean
+      • sUrkzyaH: A kind of bean
+    🌿 Child concepts (6): describe anatomical location body, produce edible bean pods, represent bean plant type, represent bean plant variety, describe fire epithet, describe bean varieties
+
+
+[77] small lizard house
+    📚 Words: 5
+    Sample Sanskrit words:
+      • gfhA(ho)likA: A small house-lizard
+      • mARikyA: A small house-lizard
+      • muSa(sa)lI: A small house-lizard
+      • mUlI: A small house-lizard
+      • sASayandakaH: A small house-lizard
+    🌿 Child concepts (1): classify reptile animal
+
+
+[78] To eat, devour
+    📚 Words: 5
+    Sample Sanskrit words:
+      • glas: To eat, devour
+      • Gas: To eat, devour
+      • psA: To eat, devour
+      • Brakz: To eat, devour
+      • valB: To eat, devour
+    🌿 Child concepts (1): consume food substances
+
+
+[79] cover: To protect or conceal something.
+    📚 Words: 5
+    Sample Sanskrit words:
+      • Gar: To cover
+      • tvac: To cover
+      • sag: To cover
+      • sKuq: To cover
+      • sTuq: To cover
+    🌿 Child concepts (1): conceal object protection
+
+
+[80] steal property illegally
+    📚 Words: 5
+    Sample Sanskrit words:
+      • curA: Theft
+      • paSyatoharaH: A thief, robber, highwayman ; Vārt.
+      • pralupta: Robbed
+      • mozakaH: A robber, thief
+      • mozwf: A thief, robber
+    🌿 Child concepts (4): commit criminal act, commit robbery criminal act, commit crime by theft, classify criminal activity
+
+
+[81] water flows through the river
+    📚 Words: 5
+    Sample Sanskrit words:
+      • jambAlinI: A river
+      • nirGUriRI: A river
+      • praSattvarI: A river
+      • SEvalinI: A river
+      • sAvinI: A river
+    🌿 Child concepts (3): river flows along its course, river flows naturally, river flows across the landscape
+
+
+[82] strike the sky suddenly
+    📚 Words: 5
+    Sample Sanskrit words:
+      • jAtUH: A thunderbolt
+      • peziH: A thunderbolt
+      • baBriH: A thunderbolt
+      • Bidram: A thunderbolt
+      • svarus: A thunderbolt
+    🌿 Child concepts (4): flash intense clouds, flash across the clouds rapidly, deliver force rapidly, launch divine power towards target
+
+
+[83] spirituous liquor production
+    📚 Words: 5
+    Sample Sanskrit words:
+      • wANkam: A kind of spirituous liquor
+      • mAnikA: A kind of spirituous liquor. A kind of weight
+      • vAruRI: The west Any spirituous liquor; The asterism Dūrvā grass. of the wife 
+      • SIDu: Any spirituous liquor, rum; Wine- the tree. a drinker of spirits
+      • surA: A spirituous liquor, wine; Water. A drinking vessel. A snake- a distil
+    🌿 Child concepts (5): classify alcoholic beverages, classify liquor types, rum alcoholic beverage, create alcoholic beverages, alcoholic beverage category
+
+
+[84] move person through space
+    📚 Words: 5
+    Sample Sanskrit words:
+      • tIk: To go, move
+      • plI: To go, move
+      • mep: To go, move
+      • srek: To go, move
+      • svaM(k)g: To go, move
+    🌿 Child concepts (2): travel from one place, travel from one place to another
+
+
+[85] Please provide the English definition of above that you want me to analyze. I need the text to extract the semantic roles and create the frames.
+    📚 Words: 5
+    Sample Sanskrit words:
+      • tUlinI: tUlinI
+
+A small, round, flat, or open vessel, often used for holding w
+      • rudrI: rudrI; A fearsome, terrible, or dreadful goddess; a female deity embod
+      • SrutI: SrutI; Hearing; the faculty of hearing; the ability to perceive sounds
+      • saMnipAtakaH: saMnipAtakaH: One who has attained asceticism; a monk or nun; a person
+      • suKaMkara: suKaMkara
+
+Desire for beauty; longing for beauty; aesthetic desire; a 
+
+
+[86] poisoning substance
+    📚 Words: 5
+    Sample Sanskrit words:
+      • dAlavaH: A kind of poison
+      • bAlUkaH: A kind of poison
+      • SakrukaH: A kind of poison
+      • saktukaH: A kind of poison
+      • sTAvarAdi: A kind of poison
+    🌿 Child concepts (1): classify toxic materials
+
+
+[87] “represent divine power
+    📚 Words: 5
+    Sample Sanskrit words:
+      • dEvakaH: A god, deity
+      • vapunaH: A god, deity
+      • vasulaH: A god, deity
+      • viBUrasiH: The god of fire
+      • viSvADAyas: A god, deity
+    🌿 Child concepts (2): embody religious beliefs, embody fiery energy
+
+
+[88] Indra’s attribute; a divine name
+    📚 Words: 5
+    Sample Sanskrit words:
+      • dOlmiH: An epithet of Indra
+      • bAhumat: An epithet of Indra
+      • bAhudantin: An epithet of Indra
+      • mAhiraH: An epithet of Indra
+      • saMmiSlaH: An epithet of Indra
+    🌿 Child concepts (4): identify deity Indra’s qualities, describe deity Indra characteristics, classify deity epithets, identify deity Indra characteristics
+
+
+[89] Observe celestial body
+    📚 Words: 5
+    Sample Sanskrit words:
+      • papiH: The moon
+      • prahaRe(ne)miH: The moon
+      • vikusraH: The moon
+      • SvayIciH: The moon
+      • hAsas: The moon
+    🌿 Child concepts (1): identify lunar satellite
+
+
+[90] grow a tree in botany
+    📚 Words: 5
+    Sample Sanskrit words:
+      • banDUliH: The tree
+      • maSakin: The tree
+      • liNgakaH: The tree
+      • vikzIraH: The tree
+      • SAlavaH: The tree
+    🌿 Child concepts (2): plant life in the forest, plant life in nature
+
+
+[91] classify insect species
+    📚 Words: 4
+    Sample Sanskrit words:
+      • aNgulikA: A sort of ant
+      • upadIkA: A kind of ant
+      • upadehikA: A kind of insect, white ant
+      • maRqarI: A kind of cricket
+    🌿 Child concepts (15): exhibit red coloration, belong to ant family, identify bee types, create nest structure, identify white ant colonies, produce venomous sting, identify toxic insects, represent miniature objects
+      ... and 7 more
+
+
+[92] classify fish in biology
+    📚 Words: 4
+    Sample Sanskrit words:
+      • aRqAluH: A fish
+      • macCaH: A fish
+      • valkavat: A fish
+      • Sakalin: A fish
+    🌿 Child concepts (4): study aquatic life, study aquatic animals zoologically, study fish in zoology, study aquatic animals zoology
+
+
+[93] of the plant
+    📚 Words: 4
+    Sample Sanskrit words:
+      • atiganDAlu: of the plant
+      • atiguhA: of the plant
+      • aviTyA: of the plant
+      • unmAdakaH: of the plant
+    🌿 Child concepts (2): describe botanical characteristics, classify plant species
+
+
+[94] Relating to: connect concepts, establish relationships
+    📚 Words: 4
+    Sample Sanskrit words:
+      • aDyAtmika: Relating to
+      • pavyaH: Relating to
+      • vAruRya: Relating to
+      • vEkuRWIya: Relating to
+    🌿 Child concepts (2): define connections, establish links, define connections, specify links
+
+
+[95] bind objects together
+    📚 Words: 4
+    Sample Sanskrit words:
+      • and: To bind, fasten
+      • murv: To bind, tie
+      • mU: To bind, fasten, tie
+      • suzmam: A rope, cord, string
+    🌿 Child concepts (4): fasten materials securely, action light binding, restrict movement physically, classify textile material
+
+
+[96] eliminate unwanted elements
+    📚 Words: 4
+    Sample Sanskrit words:
+      • apAkf: To drive away, dispel, remove, destroy; keep, put, or take away; remov
+      • protsAraRam: Getting rid of, clearing away, removing, expelling
+      • protsArita: Removed, got rid of, expelled. Urged forward, incited. Relinquished. G
+      • vyucCittiH: Cutting off, extermination, complete destruction
+    🌿 Child concepts (14): cause damage removal processes, action destruction process, discard unwanted possessions, remove obstacles effectively, remove traces evidence, process removal action, disrupt processes, interrupt flow, expel unwanted individuals/ideas
+      ... and 6 more
+
+
+[97] hold arrows in a quiver
+    📚 Words: 4
+    Sample Sanskrit words:
+      • apAsaNgaH: A quiver
+      • izuDiH: A quiver
+      • KoliH: A quiver
+      • tulasAriRI: A quiver
+    🌿 Child concepts (2): store arrows for archery, archery equipment for weapon
+
+
+[98] disclose information
+    📚 Words: 4
+    Sample Sanskrit words:
+      • aBijYApaka: Making known, informing
+      • Avedaka: Making known, reporting, communicating, One who makes known, an inform
+      • jYApanam: Making known, informing, teaching, announcing, indicating
+      • vedita: Made known, informed, communicated
+    🌿 Child concepts (4): communicate facts verbally, convey news or details, communicate knowledge, convey messages
+
+
+[99] approach destinations
+    📚 Words: 4
+    Sample Sanskrit words:
+      • aBipre: To go to or near, approach; To intend, aim at, think of, mean
+      • aBiyA: To go up to, approach, go or repair to; To come or draw near ; come To
+      • aByupe: To go near, approach, arrive, enter;entering the water bathing; To go 
+      • parApat: To arrive, draw near, approach. To return. To escape. To depart. To fa
+    🌿 Child concepts (5): intend goals mental concepts, engage in conflict battles, achieve states or conditions, move towards targets, transfer ownership
+
+
+[100] shine brightly
+    📚 Words: 4
+    Sample Sanskrit words:
+      • aBiruc: To shine, look finely; To like, desire; or To be inclined to, have a t
+      • ABA: To shine, blaze; To appear, look like;To outshine
+      • ABAs: To shine, blaze. To be bright. To appear, seem, look like;To appear un
+      • div: To shine, be bright; To throw, cast ; To gamble, play with dice ; To p
+    🌿 Child concepts (4): desire affections or things, appear visually prominent, illuminate objects and spaces, cast light or objects

@@ -1,0 +1,1247 @@
+{
+  "total_concepts": 109591,
+  "total_roots": 80158,
+  "top_roots": [
+    {
+      "concept": "observe events, perceive details",
+      "word_count": 192,
+      "sample_words": [
+        {
+          "sanskrit": "aMs",
+          "english": "See"
+        },
+        {
+          "sanskrit": "anyAnya",
+          "english": "See"
+        },
+        {
+          "sanskrit": "apAk",
+          "english": "See"
+        }
+      ],
+      "children_count": 12,
+      "sample_children": [
+        "identify objects visual stimuli",
+        "identify visual stimuli",
+        "identify objects, recognize forms",
+        "recognize visual stimuli",
+        "identify visual objects"
+      ]
+    },
+    {
+      "concept": "To go, move",
+      "word_count": 50,
+      "sample_words": [
+        {
+          "sanskrit": "ac",
+          "english": "To go, move. to honour; request, ask etc; connected with A term for vowels"
+        },
+        {
+          "sanskrit": "kamb",
+          "english": "To go, move"
+        },
+        {
+          "sanskrit": "camb",
+          "english": "To go, move"
+        }
+      ],
+      "children_count": 25,
+      "sample_children": [
+        "fulfill requests honorably",
+        "action transport movement",
+        "perform locomotion action",
+        "consume food sustenance",
+        "initiate locomotion actions"
+      ]
+    },
+    {
+      "concept": "classify plant species",
+      "word_count": 50,
+      "sample_words": [
+        {
+          "sanskrit": "anirmAlyA",
+          "english": "of a medicinal plant"
+        },
+        {
+          "sanskrit": "arizwakaH",
+          "english": "The soap-berry tree"
+        },
+        {
+          "sanskrit": "itkawaH",
+          "english": "A kind of grass"
+        }
+      ],
+      "children_count": 100,
+      "sample_children": [
+        "express longing movement",
+        "produce wood and leaves",
+        "exhibit medicinal properties",
+        "botanical specimen",
+        "identify fruit tree varieties"
+      ]
+    },
+    {
+      "concept": "observe visual stimuli",
+      "word_count": 32,
+      "sample_words": [
+        {
+          "sanskrit": "kanIka",
+          "english": "See"
+        },
+        {
+          "sanskrit": "kvaNguH",
+          "english": "See"
+        },
+        {
+          "sanskrit": "gUraRam",
+          "english": "See"
+        }
+      ],
+      "children_count": 5,
+      "sample_children": [
+        "witness events",
+        "perceive sensory information",
+        "experience visual perception",
+        "perceive visual information",
+        "perceive objects or scenes"
+      ]
+    },
+    {
+      "concept": "classify aquatic animal",
+      "word_count": 32,
+      "sample_words": [
+        {
+          "sanskrit": "era(la)NgaH",
+          "english": "A kind of fish"
+        },
+        {
+          "sanskrit": "karaRqin",
+          "english": "A fish"
+        },
+        {
+          "sanskrit": "kavayI",
+          "english": "A kind of fish"
+        }
+      ],
+      "children_count": 9,
+      "sample_children": [
+        "belong to fish species",
+        "belong to Pisces",
+        "identify fish species",
+        "represent deity Vishnu",
+        "identify small fish species"
+      ]
+    },
+    {
+      "concept": "To go: Movement from one place",
+      "word_count": 25,
+      "sample_words": [
+        {
+          "sanskrit": "aW",
+          "english": "To go"
+        },
+        {
+          "sanskrit": "ay",
+          "english": "To go"
+        },
+        {
+          "sanskrit": "ir",
+          "english": "To go"
+        }
+      ],
+      "children_count": 2,
+      "sample_children": [
+        "initiate travel action",
+        "initiate travel journey action"
+      ]
+    },
+    {
+      "concept": "move person or object through space",
+      "word_count": 20,
+      "sample_words": [
+        {
+          "sanskrit": "camp",
+          "english": "To go, move"
+        },
+        {
+          "sanskrit": "jun",
+          "english": "To go, move"
+        },
+        {
+          "sanskrit": "tfkz",
+          "english": "To go, move"
+        }
+      ],
+      "children_count": 2,
+      "sample_children": [
+        "travel from one place to another",
+        "travel across a distance"
+      ]
+    },
+    {
+      "concept": "Śiva epithet divine being",
+      "word_count": 19,
+      "sample_words": [
+        {
+          "sanskrit": "kaWamardaH",
+          "english": "An epithet of Śiva"
+        },
+        {
+          "sanskrit": "kAhaliH",
+          "english": "An epithet of Śiva"
+        },
+        {
+          "sanskrit": "kfzkaraH",
+          "english": "An epithet of Śiva"
+        }
+      ],
+      "children_count": 2,
+      "sample_children": [
+        "describe deity characteristics",
+        "describe deity attributes"
+      ]
+    },
+    {
+      "concept": "classify avian species",
+      "word_count": 18,
+      "sample_words": [
+        {
+          "sanskrit": "aprowaH",
+          "english": "A kind of bird"
+        },
+        {
+          "sanskrit": "alajaH",
+          "english": "A kind of bird"
+        },
+        {
+          "sanskrit": "kakaraH",
+          "english": "A kind of bird"
+        }
+      ],
+      "children_count": 34,
+      "sample_children": [
+        "inhabit specific regions",
+        "identify bird types",
+        "belong to poultry",
+        "represent hand position gesture",
+        "belong to vertebrate class"
+      ]
+    },
+    {
+      "concept": "classify animal species",
+      "word_count": 17,
+      "sample_words": [
+        {
+          "sanskrit": "AYjineyaH",
+          "english": "A kind of insect, a kind of lizard"
+        },
+        {
+          "sanskrit": "ArSa",
+          "english": "Belonging to the antelope"
+        },
+        {
+          "sanskrit": "upalaDipriyaH",
+          "english": "A kind of antelope"
+        }
+      ],
+      "children_count": 46,
+      "sample_children": [
+        "identify scorpion types",
+        "describe speed characteristics",
+        "produce clarified butter",
+        "categorize reptile family",
+        "relate to antelope characteristics"
+      ]
+    },
+    {
+      "concept": "To go",
+      "word_count": 15,
+      "sample_words": [
+        {
+          "sanskrit": "amb",
+          "english": "To go. To sound"
+        },
+        {
+          "sanskrit": "uW",
+          "english": "To go. To strike or knock down"
+        },
+        {
+          "sanskrit": "fS",
+          "english": "A Sautra root To go. To kill"
+        }
+      ],
+      "children_count": 16,
+      "sample_children": [
+        "produce sound waves",
+        "perform forceful impact action",
+        "perform action kill",
+        "initiate movement, travel",
+        "perform movement action"
+      ]
+    },
+    {
+      "concept": "To hurt, kill",
+      "word_count": 15,
+      "sample_words": [
+        {
+          "sanskrit": "jUz",
+          "english": "To hurt, kill"
+        },
+        {
+          "sanskrit": "trup",
+          "english": "To hurt, kill"
+        },
+        {
+          "sanskrit": "durv",
+          "english": "To hurt, kill"
+        }
+      ],
+      "children_count": 7,
+      "sample_children": [
+        "inflict physical damage",
+        "perform physical harm actions",
+        "classify animal behavior",
+        "cause harm, inflict pain",
+        "stop movement, firm state"
+      ]
+    },
+    {
+      "concept": "To sound: produce audible tones",
+      "word_count": 14,
+      "sample_words": [
+        {
+          "sanskrit": "amB",
+          "english": "To sound"
+        },
+        {
+          "sanskrit": "kaS",
+          "english": "To sound"
+        },
+        {
+          "sanskrit": "kur",
+          "english": "To sound"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "create auditory sensations",
+        "create acoustic vibrations",
+        "generate auditory sensations",
+        "extend musical notes duration"
+      ]
+    },
+    {
+      "concept": "classify elephant as a large mammal",
+      "word_count": 13,
+      "sample_words": [
+        {
+          "sanskrit": "kawinI",
+          "english": "An elephant"
+        },
+        {
+          "sanskrit": "karawin",
+          "english": "An elephant"
+        },
+        {
+          "sanskrit": "karaBin",
+          "english": "An elephant"
+        }
+      ],
+      "children_count": 6,
+      "sample_children": [
+        "identify animal species",
+        "study animal species in zoology",
+        "zoology study of animals",
+        "study animal behavior in zoo",
+        "study animal behavior in zoology"
+      ]
+    },
+    {
+      "concept": "observe perceive look",
+      "word_count": 12,
+      "sample_words": [
+        {
+          "sanskrit": "taqAGAtaH",
+          "english": "See"
+        },
+        {
+          "sanskrit": "prakzara",
+          "english": "See"
+        },
+        {
+          "sanskrit": "bAqaveya",
+          "english": "See"
+        }
+      ],
+      "children_count": 3,
+      "sample_children": [
+        "detect visual stimuli",
+        "recognize visual stimuli",
+        "identify visual objects"
+      ]
+    },
+    {
+      "concept": "H2O: A colorless, odorless, tasteless liquid",
+      "word_count": 11,
+      "sample_words": [
+        {
+          "sanskrit": "akzitaram",
+          "english": "Water"
+        },
+        {
+          "sanskrit": "kaSas",
+          "english": "Water"
+        },
+        {
+          "sanskrit": "kulInasam",
+          "english": "Water"
+        }
+      ],
+      "children_count": 1,
+      "sample_children": [
+        "Essential for life"
+      ]
+    },
+    {
+      "concept": "desire outcomes",
+      "word_count": 11,
+      "sample_words": [
+        {
+          "sanskrit": "aBimanas",
+          "english": "Intent on, desirous of; anxious, longing for"
+        },
+        {
+          "sanskrit": "izi",
+          "english": "Wishing, desiring"
+        },
+        {
+          "sanskrit": "uSI",
+          "english": "Wish, desire"
+        }
+      ],
+      "children_count": 10,
+      "sample_children": [
+        "express strong longing needs",
+        "express longing needs",
+        "express emotional longing",
+        "general concept",
+        "express wants needs"
+      ]
+    },
+    {
+      "concept": "observe perceive visual information",
+      "word_count": 11,
+      "sample_words": [
+        {
+          "sanskrit": "avyaktika",
+          "english": "See"
+        },
+        {
+          "sanskrit": "nEpuRa",
+          "english": "See"
+        },
+        {
+          "sanskrit": "pArApArIRa",
+          "english": "See"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "recognize objects around us",
+        "detect sensory input",
+        "recognize objects surroundings",
+        "interpret sensory input accurately"
+      ]
+    },
+    {
+      "concept": "instrument produce sound",
+      "word_count": 11,
+      "sample_words": [
+        {
+          "sanskrit": "ANkzI",
+          "english": "A musical instrument, a tabor"
+        },
+        {
+          "sanskrit": "fllarI",
+          "english": "A kind of musical instrument"
+        },
+        {
+          "sanskrit": "kawambaH",
+          "english": "A kind of musical instrument. An arrow"
+        }
+      ],
+      "children_count": 3,
+      "sample_children": [
+        "classify percussion instrument",
+        "classify musical devices",
+        "classify musical instruments"
+      ]
+    },
+    {
+      "concept": "tree: a woody perennial plant",
+      "word_count": 10,
+      "sample_words": [
+        {
+          "sanskrit": "akzakaH",
+          "english": "of a tree"
+        },
+        {
+          "sanskrit": "atikandakaH",
+          "english": "of a tree"
+        },
+        {
+          "sanskrit": "aruzkaH",
+          "english": "of a tree"
+        }
+      ],
+      "children_count": 3,
+      "sample_children": [
+        "classify plant trees",
+        "classify plant species",
+        "classify plant woody species"
+      ]
+    },
+    {
+      "concept": "classify bird species",
+      "word_count": 10,
+      "sample_words": [
+        {
+          "sanskrit": "anuBAsaH",
+          "english": "A kind of crow"
+        },
+        {
+          "sanskrit": "upacakraH",
+          "english": "A variety of the ruddy goose"
+        },
+        {
+          "sanskrit": "kaNkeruH",
+          "english": "A kind of crow"
+        }
+      ],
+      "children_count": 30,
+      "sample_children": [
+        "describe poor, worthless individuals",
+        "identify corvid family member",
+        "describe negative attributes",
+        "identify crow types",
+        "identify cuckoo types"
+      ]
+    },
+    {
+      "concept": "plant characteristics",
+      "word_count": 10,
+      "sample_words": [
+        {
+          "sanskrit": "adArikA",
+          "english": "of a plant"
+        },
+        {
+          "sanskrit": "ambazWikA",
+          "english": "of a plant"
+        },
+        {
+          "sanskrit": "asPotaH",
+          "english": "of a plant"
+        }
+      ],
+      "children_count": 3,
+      "sample_children": [
+        "classify botanical species",
+        "classify botanical specimens",
+        "describe botanical features"
+      ]
+    },
+    {
+      "concept": "Protecting entities",
+      "word_count": 10,
+      "sample_words": [
+        {
+          "sanskrit": "aBiguptiH",
+          "english": "Guarding, protecting. Self-denial, self-control"
+        },
+        {
+          "sanskrit": "avAkza",
+          "english": "A guardian, keeper"
+        },
+        {
+          "sanskrit": "goDeraH",
+          "english": "A protector, guardian"
+        }
+      ],
+      "children_count": 8,
+      "sample_children": [
+        "exhibiting self-discipline restraint",
+        "maintain security and order",
+        "safeguard vulnerable individuals",
+        "defend individuals or assets",
+        "maintain safety and security"
+      ]
+    },
+    {
+      "concept": "see: To perceive with the eyes.",
+      "word_count": 9,
+      "sample_words": [
+        {
+          "sanskrit": "ajjam",
+          "english": "see"
+        },
+        {
+          "sanskrit": "anarGyeya",
+          "english": "see"
+        },
+        {
+          "sanskrit": "ApaskaraH",
+          "english": "see"
+        }
+      ],
+      "children_count": 2,
+      "sample_children": [
+        "observe visual phenomena",
+        "observe visual information"
+      ]
+    },
+    {
+      "concept": "flowing water course",
+      "word_count": 9,
+      "sample_words": [
+        {
+          "sanskrit": "aDfzyA",
+          "english": "of a river"
+        },
+        {
+          "sanskrit": "uttAnikA",
+          "english": "of a river"
+        },
+        {
+          "sanskrit": "udDyaH",
+          "english": "of a river"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "define geographical waterway",
+        "define river geographical feature",
+        "define geographical river systems",
+        "characterize fluvial landscapes"
+      ]
+    },
+    {
+      "concept": "classify reptile species",
+      "word_count": 9,
+      "sample_words": [
+        {
+          "sanskrit": "aBIraRI",
+          "english": "A kind of serpent"
+        },
+        {
+          "sanskrit": "aligardaH",
+          "english": "A kind of snake"
+        },
+        {
+          "sanskrit": "kIlAlin",
+          "english": "A lizard, chameleon"
+        }
+      ],
+      "children_count": 18,
+      "sample_children": [
+        "biological organism",
+        "belong to serpent family",
+        "describe unusual morphology”",
+        "describe serpentine characteristics",
+        "represent royal animal status"
+      ]
+    },
+    {
+      "concept": "discard unwanted items",
+      "word_count": 9,
+      "sample_words": [
+        {
+          "sanskrit": "apakzip",
+          "english": "To throw away or down, take away, remove"
+        },
+        {
+          "sanskrit": "apamitya",
+          "english": "Ved. To be thrown away. Debt"
+        },
+        {
+          "sanskrit": "apahastayati",
+          "english": "Den. To seize by the neck and drive out; hence throw away, abandon, leave, disca"
+        }
+      ],
+      "children_count": 15,
+      "sample_children": [
+        "remove objects from location",
+        "manage financial obligations",
+        "abandon or desert individuals",
+        "reject undesirable possessions",
+        "relinquish possessions deliberately"
+      ]
+    },
+    {
+      "concept": "catch fish in the ocean",
+      "word_count": 9,
+      "sample_words": [
+        {
+          "sanskrit": "kupinin",
+          "english": "A fisherman"
+        },
+        {
+          "sanskrit": "kEvartaH",
+          "english": "A fisherman"
+        },
+        {
+          "sanskrit": "kEvartakaH",
+          "english": "A fisherman"
+        }
+      ],
+      "children_count": 3,
+      "sample_children": [
+        "reel in fish from sea",
+        "reel in fish from the sea",
+        "marine life caught by fishing"
+      ]
+    },
+    {
+      "concept": "epithet divine being",
+      "word_count": 9,
+      "sample_words": [
+        {
+          "sanskrit": "kumodakaH",
+          "english": "An epithet of Viṣṇu"
+        },
+        {
+          "sanskrit": "deveSayaH",
+          "english": "An epithet of Viṣṇu"
+        },
+        {
+          "sanskrit": "nandakin",
+          "english": "An epithet of Viṣṇu"
+        }
+      ],
+      "children_count": 5,
+      "sample_children": [
+        "describe deity Vishnu",
+        "describe Krishna religious",
+        "designate religious figure",
+        "describe deity characteristics",
+        "generate metal substance"
+      ]
+    },
+    {
+      "concept": "move person or object in direction",
+      "word_count": 9,
+      "sample_words": [
+        {
+          "sanskrit": "Gamb",
+          "english": "To go, move"
+        },
+        {
+          "sanskrit": "naK",
+          "english": "To go, move"
+        },
+        {
+          "sanskrit": "nez",
+          "english": "To go, move"
+        }
+      ],
+      "children_count": 3,
+      "sample_children": [
+        "travel across a distance",
+        "travel to a new location",
+        "travel across distance"
+      ]
+    },
+    {
+      "concept": "classify tree species",
+      "word_count": 8,
+      "sample_words": [
+        {
+          "sanskrit": "AtfpyaH",
+          "english": "A kind of tree, the custard apple tree The fruit of the tree"
+        },
+        {
+          "sanskrit": "upavawaH",
+          "english": "The tree Buchanania Latifolia"
+        },
+        {
+          "sanskrit": "kArzyaH",
+          "english": "The tree Shorea robusta"
+        }
+      ],
+      "children_count": 14,
+      "sample_children": [
+        "remove unwanted foliage",
+        "produce custard apple fruit",
+        "describe tree characteristics",
+        "identify *Buchanania Latifolia* plant",
+        "yield resin product"
+      ]
+    },
+    {
+      "concept": "classify arthropods invertebrates",
+      "word_count": 8,
+      "sample_words": [
+        {
+          "sanskrit": "avaSInaH",
+          "english": "A scorpion"
+        },
+        {
+          "sanskrit": "Alin",
+          "english": "A scorpion"
+        },
+        {
+          "sanskrit": "KarjUrakaH",
+          "english": "A scorpion"
+        }
+      ],
+      "children_count": 1,
+      "sample_children": [
+        "possess venomous stinger"
+      ]
+    },
+    {
+      "concept": "release entities from constraints",
+      "word_count": 8,
+      "sample_words": [
+        {
+          "sanskrit": "avasarjanam",
+          "english": "Liberation"
+        },
+        {
+          "sanskrit": "udDArita",
+          "english": "Taken out, drawn forth, extricated, released"
+        },
+        {
+          "sanskrit": "nirmuc",
+          "english": "To free, liberate, release; To leave, quit, abandon. To cast off"
+        }
+      ],
+      "children_count": 7,
+      "sample_children": [
+        "achieve freedom from oppression",
+        "extract items from sources",
+        "abandon situations or people",
+        "liberate individuals from oppression",
+        "liberate individuals from bondage"
+      ]
+    },
+    {
+      "concept": "To hurt, injure, kill",
+      "word_count": 8,
+      "sample_words": [
+        {
+          "sanskrit": "knaT",
+          "english": "To hurt, injure, kill"
+        },
+        {
+          "sanskrit": "Caz",
+          "english": "To hurt, injure, kill"
+        },
+        {
+          "sanskrit": "jUr",
+          "english": "To hurt, injure, kill. To be angry with ; To grow old"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "cause physical damage",
+        "cause physical harm",
+        "express negative emotions intensely",
+        "inflict physical damage"
+      ]
+    },
+    {
+      "concept": "“The sun”\nOUTPUT: “generate light and heat",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "aYjizWaH",
+          "english": "The sun"
+        },
+        {
+          "sanskrit": "tantrAyin",
+          "english": "The sun"
+        },
+        {
+          "sanskrit": "dfSAluH",
+          "english": "The sun"
+        }
+      ],
+      "children_count": 2,
+      "sample_children": [
+        "celestial body star",
+        "classify celestial body"
+      ]
+    },
+    {
+      "concept": "conceal information",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "apalApin",
+          "english": "One who denies, disowns, hides, conceals etc; concealing"
+        },
+        {
+          "sanskrit": "aprakASaka",
+          "english": "Making dark; not disclosing etc"
+        },
+        {
+          "sanskrit": "aprakASya",
+          "english": "Not to be disclosed, to be kept secret"
+        }
+      ],
+      "children_count": 10,
+      "sample_children": [
+        "deny ownership claims",
+        "obscure visibility",
+        "maintain confidentiality",
+        "keep things private",
+        "maintain secrecy"
+      ]
+    },
+    {
+      "concept": "Praise positive attributes",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "aBisvartf",
+          "english": "Praising; invoking"
+        },
+        {
+          "sanskrit": "nu(nU)ta",
+          "english": "Praised, extolled etc"
+        },
+        {
+          "sanskrit": "nutiH",
+          "english": "Praise, eulogium, panegyric; Worship, reverence"
+        }
+      ],
+      "children_count": 7,
+      "sample_children": [
+        "call upon divine power",
+        "celebrate achievements and merits",
+        "express reverence admiration",
+        "acknowledge excellence and merit",
+        "acknowledge worthy achievements"
+      ]
+    },
+    {
+      "concept": "Desire outcomes",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "aByezaRam",
+          "english": "Desiring, wishing. Going towards, attack"
+        },
+        {
+          "sanskrit": "ezwavya",
+          "english": "To be striven after, wished for; Desire"
+        },
+        {
+          "sanskrit": "eha",
+          "english": "Ved. Desirous. Striving well"
+        }
+      ],
+      "children_count": 7,
+      "sample_children": [
+        "initiate aggressive actions",
+        "pursue goals",
+        "strive for improvement",
+        "exhibit emotional drive",
+        "express strong longing needs"
+      ]
+    },
+    {
+      "concept": "Shine brightly",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "avaBAsin",
+          "english": "Shining, bright. The outer skin or cuticle"
+        },
+        {
+          "sanskrit": "ABAta",
+          "english": "Shining, blazing. Appearing, visible"
+        },
+        {
+          "sanskrit": "kASizRu",
+          "english": "Shining, brilliant"
+        }
+      ],
+      "children_count": 7,
+      "sample_children": [
+        "describe plant outer layer",
+        "display visible light",
+        "display radiant light",
+        "describe aesthetic qualities beauty",
+        "describe aesthetic qualities"
+      ]
+    },
+    {
+      "concept": "steal property",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "Amozin",
+          "english": "A thief"
+        },
+        {
+          "sanskrit": "kusumAlaH",
+          "english": "A thief"
+        },
+        {
+          "sanskrit": "pawatkaH",
+          "english": "A thief"
+        }
+      ],
+      "children_count": 1,
+      "sample_children": [
+        "identify criminal individuals"
+      ]
+    },
+    {
+      "concept": "insect classification",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "AraNgaraH",
+          "english": "A bee"
+        },
+        {
+          "sanskrit": "upAdikaH",
+          "english": "A sort of insect. of plant"
+        },
+        {
+          "sanskrit": "gardaBakaH",
+          "english": "A kind of insect. A cutaneous disease, a blotch, eruption"
+        }
+      ],
+      "children_count": 7,
+      "sample_children": [
+        "produce honey pollen",
+        "belong to plant kingdom",
+        "cause skin abnormalities",
+        "produce smoke dwellings",
+        "classify insects biological"
+      ]
+    },
+    {
+      "concept": "Śiva’s descriptive term",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "kuRqin",
+          "english": "An epithet of Śiva. A bastard. A horse"
+        },
+        {
+          "sanskrit": "wakkaraH",
+          "english": "An epithet of Śiva. A blow on the head"
+        },
+        {
+          "sanskrit": "Dawin",
+          "english": "An epithet of Śiva. The sign Libra of the zodiac. A dealer, trader"
+        }
+      ],
+      "children_count": 7,
+      "sample_children": [
+        "denote negative characteristics",
+        "inflict physical trauma head",
+        "zodiac sign Libra",
+        "celestial body, the sun",
+        "religious student practices"
+      ]
+    },
+    {
+      "concept": "Durgā’s descriptive attribute",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "kOwaBI",
+          "english": "An epithet of Durgā"
+        },
+        {
+          "sanskrit": "kOwIryA",
+          "english": "An epithet of Durgā"
+        },
+        {
+          "sanskrit": "prakUzmARqI",
+          "english": "An epithet of Durgā"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "identify deity qualities",
+        "classify deity epithets",
+        "identify deity’s characteristic qualities",
+        "identify deity characteristics"
+      ]
+    },
+    {
+      "concept": "classify mineral substance",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "drOReyam",
+          "english": "A kind of salt"
+        },
+        {
+          "sanskrit": "DOteyaH",
+          "english": "A kind of salt"
+        },
+        {
+          "sanskrit": "biqam",
+          "english": "A kind of salt"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "identify plant indigo vitriol",
+        "produce sodium chloride",
+        "belong to salt category",
+        "represent crystalline form"
+      ]
+    },
+    {
+      "concept": "respond to questions",
+      "word_count": 7,
+      "sample_words": [
+        {
+          "sanskrit": "pratijalpaH",
+          "english": "An answer, reply"
+        },
+        {
+          "sanskrit": "pratiBAzA",
+          "english": "An answer, a reply"
+        },
+        {
+          "sanskrit": "pratimantraRam",
+          "english": "An answer, reply"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "provide information answers",
+        "demonstrate proven results",
+        "communicate verbal answers",
+        "provide information accurately"
+      ]
+    },
+    {
+      "concept": "Please provide the English definition you would like me to analyze. I need the text of the definition to extract the semantic roles and create the frames.",
+      "word_count": 6,
+      "sample_words": [
+        {
+          "sanskrit": "ajakA",
+          "english": "ajakA\n\nA fool, simpleton, idiot; a person lacking intelligence or wisdom; one wh"
+        },
+        {
+          "sanskrit": "aTarvaH",
+          "english": "aTarvaH:  A kind of barley; a type of grain, often specifically referring to a c"
+        },
+        {
+          "sanskrit": "kfv",
+          "english": "P"
+        }
+      ],
+      "children_count": 0,
+      "sample_children": []
+    },
+    {
+      "concept": "“classify plant species",
+      "word_count": 6,
+      "sample_words": [
+        {
+          "sanskrit": "anupuzpaH",
+          "english": "A kind of reed"
+        },
+        {
+          "sanskrit": "AmupaH",
+          "english": "The thorny Bamboo; Bambusa Spinosa"
+        },
+        {
+          "sanskrit": "ikzvAri(li)kaH",
+          "english": "A kind of reed"
+        }
+      ],
+      "children_count": 5,
+      "sample_children": [
+        "belong to grass family”",
+        "identify bamboo varieties",
+        "produce sugarcane material",
+        "produce seeds and grains",
+        "identify tropical grasses"
+      ]
+    },
+    {
+      "concept": "Praise worthy individuals",
+      "word_count": 6,
+      "sample_words": [
+        {
+          "sanskrit": "aneman",
+          "english": "Ved. Praiseworthy"
+        },
+        {
+          "sanskrit": "ABUzeRya",
+          "english": "Ved. Praiseworthy"
+        },
+        {
+          "sanskrit": "fgmiya",
+          "english": "Praiseworthy"
+        }
+      ],
+      "children_count": 4,
+      "sample_children": [
+        "describe positive attributes",
+        "receive positive recognition",
+        "express admiration verbally",
+        "exhibit admirable qualities"
+      ]
+    },
+    {
+      "concept": "Please provide the English definition you want me to analyze. I need the text of the definition to extract the semantic roles and create the frames.",
+      "word_count": 6,
+      "sample_words": [
+        {
+          "sanskrit": "apavarta",
+          "english": "apavarta\n\n“Abandonment; renunciation; giving up; cessation; cessation of activit"
+        },
+        {
+          "sanskrit": "apasala",
+          "english": "apasaLaḥ\n\nA well, cistern, reservoir; a place for collecting water; a receptacle"
+        },
+        {
+          "sanskrit": "abBra",
+          "english": "abBra (अब्र)\n\n1.  To deny, reject, refuse; to disallow; to censure; to disapprov"
+        }
+      ],
+      "children_count": 0,
+      "sample_children": []
+    },
+    {
+      "concept": "protect entities from harm",
+      "word_count": 6,
+      "sample_words": [
+        {
+          "sanskrit": "aBirakz",
+          "english": "To protect, preserve, keep, guard, help; To rule over, govern ; command"
+        },
+        {
+          "sanskrit": "gopAyaka",
+          "english": "A preserver, defender, one who guards"
+        },
+        {
+          "sanskrit": "trA",
+          "english": "To protect; see also"
+        }
+      ],
+      "children_count": 9,
+      "sample_children": [
+        "resist external forces",
+        "govern populations effectively",
+        "classify emotions envy jealousy",
+        "maintain security and order",
+        "safeguard against threats"
+      ]
+    }
+  ]
+}
