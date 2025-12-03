@@ -1,94 +1,20 @@
-name: Verify JOSS Paper
-
+name: JOSS Paper Compilation
 on:
   push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-  workflow_dispatch:  # Allow manual trigger
+    branches: [ main ]
+    paths:
+      - 'paper.md'
+      - 'paper.bib'
 
 jobs:
-  verify:
+  build-paper:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    
-    - name: Verify JOSS Paper Structure
-      run: |
-        echo "=========================================="
-        echo "JOSS PAPER STRUCTURE VERIFICATION"
-        echo "=========================================="
-        
-        # Check if paper.md exists
-        if [ ! -f "paper.md" ]; then
-          echo "❌ ERROR: paper.md not found"
-          exit 1
-        fi
-        echo "✅ paper.md exists"
-        
-        # Check YAML header starts with ---
-        if ! head -1 paper.md | grep -q "---"; then
-          echo "❌ ERROR: paper.md must start with '---'"
-          exit 1
-        fi
-        echo "✅ YAML header starts correctly"
-        
-        # Check required sections
-        REQUIRED_SECTIONS=6
-        SECTION_COUNT=$(grep -c "^# " paper.md)
-        if [ $SECTION_COUNT -lt $REQUIRED_SECTIONS ]; then
-          echo "❌ ERROR: Found only $SECTION_COUNT sections, need at least $REQUIRED_SECTIONS"
-          exit 1
-        fi
-        echo "✅ Found $SECTION_COUNT sections"
-        
-        # Check specific required sections
-        for section in "Summary" "Statement of Need" "Key Features" "Methodology" "Benchmark Results" "Availability"; do
-          if ! grep -q "^# $section" paper.md; then
-            echo "❌ ERROR: Missing '# $section' section"
-            exit 1
-          fi
-        done
-        echo "✅ All required sections present"
-        
-        # Check paper.bib exists
-        if [ ! -f "paper.bib" ]; then
-          echo "❌ ERROR: paper.bib not found"
-          exit 1
-        fi
-        echo "✅ paper.bib exists"
-        
-        # Check BibTeX entries
-        BIB_ENTRIES=$(grep -c "^@" paper.bib || echo "0")
-        if [ "$BIB_ENTRIES" -eq "0" ]; then
-          echo "❌ ERROR: No BibTeX entries found in paper.bib"
-          exit 1
-        fi
-        echo "✅ Found $BIB_ENTRIES BibTeX entries"
-        
-        # Check ORCID
-        if ! grep -q "orcid:" paper.md; then
-          echo "⚠️  WARNING: No ORCID found in paper.md"
-        else
-          echo "✅ ORCID found"
-        fi
-        
-        echo ""
-        echo "🎉 ALL CHECKS PASSED!"
-        echo "Your paper is ready for JOSS submission."
-        
-    - name: Compile Paper (Optional - Tests PDF generation)
-      if: success()
-      uses: openjournals/joss-paper-compiler@main
-      with:
-        paper-path: paper.md
-        bibliography-path: paper.bib
-        
-    - name: Upload Compiled Paper
-      if: success()
-      uses: actions/upload-artifact@v4
-      with:
-        name: compiled-paper
-        path: paper.pdf
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Build paper
+        uses: openjournals/openjournals-draft-action@main
+        with:
+          # This will compile your paper and provide feedback
+          paper-path: paper.md
