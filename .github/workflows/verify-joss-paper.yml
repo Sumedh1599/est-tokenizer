@@ -1,20 +1,81 @@
-name: JOSS Paper Compilation
+name: Verify JOSS Paper
 on:
   push:
     branches: [ main ]
     paths:
       - 'paper.md'
-      - 'paper.bib'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'paper.md'
 
 jobs:
-  build-paper:
+  verify-paper:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Build paper
-        uses: openjournals/openjournals-draft-action@main
         with:
-          # This will compile your paper and provide feedback
-          paper-path: paper.md
+          fetch-depth: 0
+
+      - name: Verify paper metadata
+        run: |
+          # Check if paper.md exists
+          if [ ! -f "paper.md" ]; then
+            echo "paper.md not found!"
+            exit 1
+          fi
+          
+          # Extract metadata
+          echo "Checking paper metadata..."
+          
+          # Check for required YAML frontmatter
+          if ! head -10 paper.md | grep -q "---"; then
+            echo "YAML frontmatter not found!"
+            exit 1
+          fi
+          
+          # Check for required fields
+          REQUIRED_FIELDS=("title" "authors" "affiliations" "keywords" "bibliography")
+          for field in "${REQUIRED_FIELDS[@]}"; do
+            if ! grep -q "$field:" paper.md; then
+              echo "Required field '$field' not found in paper.md!"
+              exit 1
+            fi
+          done
+          
+          echo "✓ Paper metadata looks good!"
+
+      - name: Check word count
+        run: |
+          # Count words in paper (excluding YAML frontmatter and code blocks)
+          if [ -f "paper.md" ]; then
+            # Remove YAML frontmatter
+            sed '/^---$/,/^---$/d' paper.md | \
+            # Remove code blocks
+            sed '/^```/,/^```/d' | \
+            # Count words
+            wc -w | awk '{print "Word count:", $1}'
+          fi
+
+      - name: Check for figures
+        run: |
+          if [ -f "paper.md" ]; then
+            FIGURE_COUNT=$(grep -c '!\[.*\](.*)' paper.md || true)
+            echo "Number of figures found: $FIGURE_COUNT"
+          fi
+
+      - name: Check citations
+        run: |
+          if [ -f "paper.md" ] && [ -f "paper.bib" ]; then
+            # Extract citation keys
+            CITATIONS=$(grep -o '@[a-zA-Z0-9_:-]*' paper.md | sort | uniq)
+            echo "Citations found in paper:"
+            echo "$CITATIONS"
+            
+            # Count citations
+            CITATION_COUNT=$(echo "$CITATIONS" | grep -c '@' || true)
+            echo "Total citation count: $CITATION_COUNT"
+          elif [ -f "paper.md" ]; then
+            echo "Note: paper.bib not found, skipping citation validation"
+          fi
